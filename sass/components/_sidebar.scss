@@ -1,0 +1,59 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+
+.sidebar {
+  background-color: $bg-black;
+  color: $text-primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 259px;
+  padding-top: 12px;
+  
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+
+}
+
+.sidebar-nav .nav-link {
+  
+padding-left: 20px;
+}
+
+.nav-link {
+  @mixin hover-active {
+  color: $bg-dark-grey;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+    
+}
+// .nav-link {
+//     a {
+//         color: $text-primary;
+//         text-decoration: none; // მნიშვნელოვანია, რომ a ტეგს მოაცილოთ ხაზგასმა
+//     }
+// }
+
+.nav-link {
+  display: flex;       // ეს აუცილებელია gap-ის მუშაობისთვის
+  align-items: center; // ეს გაასწორებს SVG-ს და ტექსტს ვერტიკალურად ცენტრში
+  height: 40px;        // ახლა უკვე იმუშავებს
+  gap: 15px;           // აქ ჩაწერე დაშორება SVG-სა და ტექსტს შორის
+  
+  a {
+    display: flex;     // ლინკიც flex-ად ვაქციოთ, რომ შიგნით ყველაფერი გასწორდეს
+    align-items: center;
+    gap: 10px;         // SVG-სა და ტექსტს შორის დაშორება
+    color: $text-primary;
+    text-decoration: none;  
+    width: 100%;       // რომ მთელ სიგანეზე შეგეძლოს კლიკი
+    height: 100%;      // რომ მთელი სიმაღლე აითვისოს
+  }
+}

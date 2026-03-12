@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="main-layout">
+    <div class="main-layout container">
 
         <header class="header-container">
 
@@ -21,7 +22,7 @@
                 <div class="header-navigation">
                     <ul class="main-nav-list">
 
-                        <li class="nav-link"><a href="#">
+                        <li class="nav-link"><a href="./pages/library.html" target="_blank">
 
                                 <svg class="nav-icon" width="41" height="41" viewBox="0 0 41 41" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -166,8 +167,6 @@
             </nav>
         </header>
 
-
-
         <!-- Sidebar -->
 
         <aside class="sidebar">
@@ -284,7 +283,6 @@
             </nav>
         </aside>
 
-
         <!-- Main Content of page -->
 
         <main class="main-content">
@@ -299,39 +297,241 @@
                 </div>
 
                 <div class="adjust-icon">
-                    <img src="/assets/" alt="Adjust">
+                    <img src="assets/icons/icons big/Name=Adjust, Filled=No.svg" alt="Adjust" title="Adjust">
+                    <!-- title რატო არ მუშაობს? -->
+
                 </div>
 
             </section>
 
-            <section class="main-content-card-sections">
-                <div class="section-name">
-                    <h2>Made For You</h2>
-                    <div class="navigation-arrows">
-                        <img src="/assets/" alt="Arrow-left">
-                        <img src="/assets/" alt="Arrow-right">
-                        <img src="/assets/" alt="More">
+            <!-- Cards Area -->
+
+            <div class="card-grid">
+
+
+                <!-- Made For You -->
+
+                <section class="cards-section">
+                    <div class="section-name">
+                        <h2>Made For You</h2>
+                        <div class="navigation-arrows">
+                            <img src="assets/icons/icons big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="assets/icons/icons big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="card-container">
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8.png" alt="Discover Weekly">
+                            <h3>Discover Weekly <span>50</span></h3>
+                            <p>Your weekly mixtape of fresh music.</p>
 
-                <div class="card-grid">
-                    <article class="card">
-                        <img src="" alt="">
-                        <h3></h3>
-                        <p></p>
+                        </article>
 
-                    </article>
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-1.png" alt="Daily Mix 1">
+                            <h3>Daily Mix 1 <span>50</span></h3>
+                            <p>Linkin Park, System Of A Down, Coal Chamber...</p>
 
-                    <article class="card">
-                        <img src="" alt="">
-                        <h3></h3>
-                        <p></p>
+                        </article>
 
-                    </article>
-                </div>
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-2.png" alt="Daily Mix 2">
+                            <h3>Daily Mix 2 <span>50</span></h3>
+                            <p>Avril Lavigne, Lorde, Charli XCX and more</p>
 
-            </section>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-3.png" alt="Daily Mix 3">
+                            <h3>Daily Mix 3 <span>50</span></h3>
+                            <p>The Strokes, Martin Garrix, MGMT and more</p>
+
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-4.png" alt="Daily Mix 4">
+                            <h3>Daily Mix 4 <span>50</span></h3>
+                            <p>Chuck Berry, Elvis Presley, Roy Orbison and more</p>
+
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-5.png" alt="Daily Mix 6">
+                            <h3>Daily Mix 6 <span>50</span></h3>
+                            <p>Frank Sinatra, Gerhard Trede, Dean Martin and more</p>
+
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-6.png" alt="Nirvana">
+                            <h3>Nirvana <span>50</span></h3>
+                            <p>The Strokes, Martin Garrix, MGMT and more</p>
+
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-7.png" alt="Fall Out Boy">
+                            <h3>Fall Out Boy <span>50</span></h3>
+                            <p>With Panic! At The Disco, The All-American Rejects....</p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- 2nd row -->
+
+
+                <section class="cards-section">
+
+                    <div class="section-name">
+                        <h2>Your top mixes</h2>
+                        <div class="navigation-arrows">
+                            <img src="assets/icons/icons big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="assets/icons/icons big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+                        </div>
+
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-11.png" alt="Rock Mix">
+                            <h3>Rock Mix <span>50</span></h3>
+                            <p>Red Hot Chili Peppers, R.E.M., Guns N' Roses...</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-12.png" alt="Chill Mix">
+                            <h3>Chill Mix <span>50</span></h3>
+                            <p>MF DOOM, Daft Punk, The Chainsmokers, and more</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-13.png" alt="Pop Mix">
+                            <h3>Pop Mix <span>50</span></h3>
+                            <p>Kylie Minogue, Charli XCX, Cage The Elephant and...</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-14.png" alt="Daft Punk Mix">
+                            <h3>Daft Punk Mix <span>50</span></h3>
+                            <p>Daft Punk, MGMT, Muse, and more</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-15.png" alt="Happy Mix">
+                            <h3>Happy Mix <span>50</span></h3>
+                            <p>Chuck Berry, Skeeter David, Van Morrison and...</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-16.png" alt="David Bowie Mix">
+                            <h3>David Bowie Mix <span>50</span></h3>
+                            <p>Soft Cell, The Who and The Clash</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 8-17.png" alt="60s Mix">
+                            <h3>Upbeat Mix <span>50</span></h3>
+                            <p>Kylie Minogue, Charli XCX, Cage The Elephant and...</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/Frame 124-1.png" alt="60s Mix">
+                            <h3>60s Mix <span>50</span></h3>
+                            <p>The Turtles, Van Morrison, ABBA and more</p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- 3rd row -->
+
+
+                <section class="cards-section">
+
+                    <div class="section-name">
+                        <h2>Your favorite artists</h2>
+                        <div class="navigation-arrows">
+                            <img src="assets/icons/icons big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="assets/icons/icons big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+                        </div>
+
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/image 9.png" alt="Rock Mix">
+                            <h3>Guns N’ Roses</h3>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/image 3.png" alt="Rock Mix">
+                            <h3>Daft Punk</h3>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/image 4.png" alt="Rock Mix">
+                            <h3>David Bowie</h3>
+                        </article>
+                    </div>
+
+                </section>
+
+
+                <!-- 4rd row -->
+
+
+                <section class="cards-section">
+
+                    <div class="section-name">
+                        <h2>Albums for you</h2>
+                        <div class="navigation-arrows">
+                            <img src="assets/icons/icons big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="assets/icons/icons big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+                        </div>
+
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/images 1 (3).png" alt="Rock Mix">
+                            <h3>Meteora</h3>
+                            <p>Linkin Park</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/image 3.png" alt="Rock Mix">
+                            <h3>Random Access Memories 13</h3>
+                            <p>Daft Punk</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/images 1 (1).png" alt="Rock Mix">
+                            <h3>Abbey Road</h3>
+                            <p>The beatles</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (6).png" alt="Rock Mix">
+                            <h3>Black Holes and Revelations</h3>
+                            <p>Muse</p>
+                        </article>
+                    </div>
+
+                </section>
 
 
 
@@ -339,20 +539,158 @@
 
 
 
+                <!-- 4rs row -->
 
 
+                <section class="cards-section">
+
+                    <div class="section-name">
+                        <h2>Audiobooks for you</h2>
+                        <div class="navigation-arrows">
+                            <img src="assets/icons/icons big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="assets/icons/icons big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+                        </div>
+
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (1).png" alt="Rock Mix">
+                            <h3>Halo: The Flood</h3>
+                            <p>William C. Dietz</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (4).png" alt="Rock Mix">
+                            <h3>Halo: First Strike</h3>
+                            <p>Eric Nylund</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (5).png" alt="Rock Mix">
+                            <h3>Halo: Ghosts of Onix</h3>
+                            <p>Eric Nylund</p>
+                        </article>
+                    </div>
+
+                </section>
+
+
+                <!-- 5th row -->
+
+
+                <section class="cards-section">
+
+                    <div class="section-name">
+                        <h2>Podcats for you</h2>
+                        <div class="navigation-arrows">
+                            <img src="assets/icons/icons big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="assets/icons/icons big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+                        </div>
+
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (2).png" alt="Rock Mix">
+                            <h3>anything goes...</h3>
+                            <p>emma chamberlain</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (3).png" alt="Rock Mix">
+                            <h3>The Joe Rogan...</h3>
+                            <p>Joe Rogan</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (6).png" alt="Rock Mix">
+                            <h3>The Journal</h3>
+                            <p>The Wall Street Journal</p>
+                        </article>
+                    </div>
+
+                </section>
+
+
+                <!-- 6th row -->
+
+
+                <section class="cards-section">
+
+                    <div class="section-name">
+                        <h2>Episodes for you</h2>
+                        <div class="navigation-arrows">
+                            <img src="assets/icons/icons big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="assets/icons/icons big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+                        </div>
+
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (2).png" alt="Rock Mix">
+                            <h3>anything goes...</h3>
+                            <p>emma chamberlain</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (3).png" alt="Rock Mix">
+                            <h3>The Joe Rogan...</h3>
+                            <p>Joe Rogan</p>
+                        </article>
+
+                        <article class="card">
+                            <img src="/assets/images/home-pg-images/img (6).png" alt="Rock Mix">
+                            <h3>The Journal</h3>
+                            <p>The Wall Street Journal</p>
+                        </article>
+                    </div>
+
+                </section>
+
+
+
+
+            </div>
 
         </main>
 
+        <footer>
 
+            <img src="assets/icons/icons big/Name=Pause, Filled=No.svg" alt="Pause">
+            <img src="assets/icons/icons big/Name=Prev, Filled=No.svg" alt="Previous">
+            <img src="assets/icons/icons big/Name=Next, Filled=No.svg" alt="Next">
+            <img src="assets/icons/icons big/Name=Shuffle, Filled=No.svg" alt="Shuffle">
+            <img src="assets/icons/icons big/Name=Loop, Filled=No.svg" alt="Loop">
+            <img src="assets/icons/player-icons/2_23.svg" alt="time2_23">
+            <img src="assets/icons/player-icons/track.svg" alt="track">
+            <img src="assets/icons/player-icons/4_45.svg" alt="time4_45">
+            <img src="assets/icons/player-icons/icons big (1).svg" alt="Sound">
+            <img src="assets/icons/player-icons/Rectangle 6.svg" alt="Album Picture">
 
+            <span>Get Lucky
+                Duft Punk
+                Random Access Memories</span>
 
+            <img src="assets/icons/icons big/Name=Like, Filled=No.svg" alt="Llike">
+            <img src="assets/icons/icons big/Name=Add to Playlist, Filled=No.svg" alt="Add to Playlist">
+            <img src="assets/icons/icons big/Name=Lyrics, Filled=No.svg" alt="Lyrics">
+            <img src="assets/icons/icons big/Name=Device, Filled=No.svg" alt="Device">
+            <img src="assets/icons/icons big/Name=More, Filled=No.svg" alt="More">
+            <img src="assets/icons/player-icons/Frame 62.svg" alt="Line">
+            <img src="assets/icons/player-icons/DJ.svg" alt="DJ">
+            <img src="assets/icons/icons big/Name=Queue, Filled=No.svg" alt="Queue">
 
-
-
+        </footer>
 
     </div>
-
 
 </body>
 
