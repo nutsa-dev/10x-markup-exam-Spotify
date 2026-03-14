@@ -9,7 +9,11 @@
   flex-direction: column;
   justify-content: space-between;
   width: 259px;
+  height: 100vh;
   padding-top: 12px;
+  position: fixed;
+  top: 54px;
+  left: 0;
   
 }
 
@@ -34,12 +38,7 @@ padding-left: 20px;
 }
     
 }
-// .nav-link {
-//     a {
-//         color: $text-primary;
-//         text-decoration: none; // მნიშვნელოვანია, რომ a ტეგს მოაცილოთ ხაზგასმა
-//     }
-// }
+
 
 .nav-link {
   display: flex;       // ეს აუცილებელია gap-ის მუშაობისთვის
@@ -54,6 +53,6 @@ padding-left: 20px;
     color: $text-primary;
     text-decoration: none;  
     width: 100%;       // რომ მთელ სიგანეზე შეგეძლოს კლიკი
-    height: 100%;      // რომ მთელი სიმაღლე აითვისოს
+    height: 100%;      
   }
 }

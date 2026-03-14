@@ -39,3 +39,20 @@
   gap: 8px;
   text-decoration: none;
 }
+
+// Card layouts for different pages
+// @mixin card-grid-layout($min-width: 170px, $gap: 11px) {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+//   gap: $gap;
+// }
+
+// Content inside header
+
+@mixin content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  
+}

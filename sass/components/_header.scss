@@ -9,11 +9,16 @@
   height: 54px;
   width: 100%;
   justify-content: space-between;
+  display: flex;
+  top: 0;
+  left: 0;
 }
 
 .top-sidebar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  
 }
 
 .action-nav-list {
@@ -47,6 +52,7 @@
   margin-top: 10px;
   margin-left: 10px;
   padding: 0;
+  
 
   .nav-link {
     
@@ -68,6 +74,11 @@
       border-radius: 8px;
       gap: 10px;
 
+      &:hover {
+        @include hover-active; 
+        cursor: pointer;
+      }
+
     }
   }
 }
@@ -81,8 +92,11 @@
 }
 
 .main-content-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include content-header;
   
+}
+
+.library-content-header {
+  @include content-header;
+  padding-bottom: 21px;
 }
