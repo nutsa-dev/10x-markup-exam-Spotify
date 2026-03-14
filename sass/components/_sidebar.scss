@@ -25,9 +25,14 @@
 
 }
 
-.sidebar-nav .nav-link {
+.sidebar-nav .nav-link a {
   
 padding-left: 20px;
+
+&:hover {
+        @include hover-active;
+      }
+
 }
 
 .nav-link {
@@ -41,18 +46,18 @@ padding-left: 20px;
 
 
 .nav-link {
-  display: flex;       // ეს აუცილებელია gap-ის მუშაობისთვის
-  align-items: center; // ეს გაასწორებს SVG-ს და ტექსტს ვერტიკალურად ცენტრში
-  height: 40px;        // ახლა უკვე იმუშავებს
-  gap: 15px;           // აქ ჩაწერე დაშორება SVG-სა და ტექსტს შორის
+  display: flex;       
+  align-items: center; 
+  // height: 40px;       
+  // gap: 15px;           /* მაინც სხვადასხვა დაშორებაა აიკონებს შორის */
+  justify-content: center;
   
   a {
-    display: flex;     // ლინკიც flex-ად ვაქციოთ, რომ შიგნით ყველაფერი გასწორდეს
+    display: flex;     
     align-items: center;
-    gap: 10px;         // SVG-სა და ტექსტს შორის დაშორება
     color: $text-primary;
     text-decoration: none;  
-    width: 100%;       // რომ მთელ სიგანეზე შეგეძლოს კლიკი
+    width: 100%;       
     height: 100%;      
   }
 }

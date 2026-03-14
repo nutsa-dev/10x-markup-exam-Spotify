@@ -27,9 +27,13 @@
 
 // Hover effects
 @mixin hover-active {
-  color: $bg-dark-grey;
+  color: $text-active;
+  background-color: $bg-light-grey;
+  border-color: $border-col;
+  border-radius: 8px;
   cursor: pointer;
   transition: color 0.3s ease;
+ 
 }
 
 

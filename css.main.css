@@ -29,15 +29,8 @@ h1, h2, h3 {
   color: #E0E0E0;
 }
 
-h3 {
-  font-size: 14px;
-}
-
-p {
-  color: #898989;
-}
-
 .container {
+  max-width: 1770px;
   margin: 0 auto;
 }
 
@@ -45,23 +38,7 @@ p {
   display: grid;
   grid-template-columns: 260px 1fr;
   grid-template-rows: 54px 1fr 81px;
-  column-gap: 10px;
-  row-gap: 10px;
   height: 100vh;
-  overflow: hidden;
-  position: relative;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
-.main-layout::-webkit-scrollbar {
-  width: 0;
-}
-.main-layout::-webkit-scrollbar-track {
-  background: transparent;
-}
-.main-layout::-webkit-scrollbar-thumb {
-  background-color: #111111;
-  border-radius: 3px;
 }
 
 .header-container {
@@ -81,15 +58,19 @@ p {
   border: 1px solid #6E6E6E;
   border-radius: 8px;
   padding: 25px;
+  width: calc(100vw - 259px);
   overflow-y: auto;
   height: 100vh;
+  position: fixed;
+  left: 259px;
+  top: 54px;
 }
 
 footer {
   grid-column: 2/-1;
   grid-row-start: 3;
   bottom: 0;
-  left: 269px;
+  left: 259px;
   height: 81px;
   background-color: #333842;
   border-radius: 8px;
@@ -100,10 +81,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.album {
-  width: 170px;
 }
 
 .sidebar {
@@ -126,26 +103,20 @@ footer {
   justify-content: space-between;
 }
 
-.sidebar-nav .nav-link a {
+.sidebar-nav .nav-link {
   padding-left: 20px;
-}
-.sidebar-nav .nav-link a:hover {
-  color: #E0E0E0;
-  background-color: #202020;
-  border-color: #6E6E6E;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  justify-content: center;
+  height: 40px;
+  gap: 15px; /* მაინც სხვადასხვა დაშორებაა აიკონებს შორის */
 }
 .nav-link a {
   display: flex;
   align-items: center;
+  gap: 10px; /* აქაც გავუწერო? მარა მაინც არ მუშაობს */
   color: #898989;
   text-decoration: none;
   width: 100%;
@@ -225,6 +196,7 @@ footer {
   border-radius: 8px;
   cursor: pointer;
   transition: color 0.3s ease;
+  /* არაფრით არ ედება ეს ჰოვერი, არც მიქსინით არც ისე */
 }
 
 .action-nav-list {
@@ -260,12 +232,6 @@ footer {
   padding-bottom: 21px;
 }
 
-.main-content-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .cards-section {
   display: flex;
   flex-direction: column;
@@ -279,10 +245,10 @@ footer {
   gap: 6px;
   background-color: #060606;
   border-radius: 8px;
-  width: 170px;
+  width: 100%;
 }
 .card img {
-  width: 170px;
+  width: 100%;
   border-radius: 4px;
 }
 .card h3 {
@@ -337,8 +303,10 @@ footer {
 }
 
 .space-for-icons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 0 20px;
 }
 
@@ -475,4 +443,4 @@ footer {
   font-style: italic;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=css.main.css.map */

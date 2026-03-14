@@ -15,8 +15,17 @@ h1, h2, h3 {
   color: $text-active;
 }
 
+h3 {
+  font-size: $font-size-base;
+ 
+}
+
+p {
+  color: $text-primary;
+}
+
 .container {
-  max-width: 1770px;
+  // max-width: 1770px;
   margin: 0 auto;
 
 }
@@ -25,7 +34,25 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 260px 1fr;
   grid-template-rows: 54px 1fr 81px;
+  column-gap: 10px;
+  row-gap: 10px;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
+  
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+        width: 0;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $bg-dark-grey;
+        border-radius: 3px;
+    }
   
   
 }
@@ -45,22 +72,19 @@ h1, h2, h3 {
 .main-content {
   grid-column-start: 2;
   grid-row-start: 2;
-  overflow-y: auto;
   border: 1px solid $border-col;
   border-radius: 8px;
   padding: 25px;
-  width: calc(100vw - 259px);
-  overflow-y: hidden;
-  position: fixed;
-  left: 259px;
-  top: 54px;
+  overflow-y: auto;
+  height: 100vh;
+ 
 }
 
 footer {
   grid-column: 2/-1;
   grid-row-start: 3;
   bottom: 0;
-  left: 259px;
+  left: 269px;
   height: 81px;
   background-color: $footer-col;
   border-radius: 8px;
@@ -76,3 +100,9 @@ footer {
   justify-content: space-between
 
 }  
+
+.album {
+  width: 170px;
+}
+
+

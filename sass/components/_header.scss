@@ -21,29 +21,7 @@
   
 }
 
-.action-nav-list {
-  display: flex;
-  gap: 13px;
-  align-items: center;
-
-  a {
-    display: flex;
-      align-items: center;
-      width: 100%;        
-      box-sizing: border-box; 
-      text-decoration: none;
-      color: $text-primary;
-      border-radius: 8px;
-      gap: 10px;
-
-      &:hover {
-        background-color: $bg-light-grey;
-        color: $text-active;
-      }
-  }
-
-  
-}
+// 1st list in main navigation - top right
 
 .main-nav-list {
   display: flex;
@@ -71,17 +49,43 @@
       text-decoration: none;
       color: $text-primary;
       padding: 8px 12px;
-      border-radius: 8px;
+      border-radius: 8px; 
       gap: 10px;
 
       &:hover {
-        @include hover-active; 
-        cursor: pointer;
+        @include hover-active;
       }
 
     }
   }
 }
+
+// 2nd list / Top left navigation with icons inside
+
+.action-nav-list {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+
+  a {
+    display: flex;
+      align-items: center;
+      width: 100%;        
+      box-sizing: border-box; 
+      text-decoration: none;
+      color: $text-primary;
+      border-radius: 8px;
+      gap: 10px;
+
+      &:hover {
+        background-color: $bg-light-grey;
+        color: $text-active;
+      }
+  }
+
+  
+}
+
 
 
 .icon-nav {
@@ -91,12 +95,15 @@
 
 }
 
-.main-content-header {
-  @include content-header;
-  
-}
+
 
 .library-content-header {
   @include content-header;
   padding-bottom: 21px;
+}
+
+.main-content-header {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

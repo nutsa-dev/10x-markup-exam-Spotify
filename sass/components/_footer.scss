@@ -17,10 +17,10 @@
     justify-content: center;
 
     img {
-    width: 28px;  // აქ დააყენე შენთვის სასურველი ზომა
+    width: 28px;  
     height: 28px;
-    object-fit: contain; // იმისთვის, რომ აიკონები არ დაიმახინჯოს
-    cursor: pointer;    // სურვილისამებრ
+    object-fit: contain; 
+    cursor: pointer;    
   }
 
   
@@ -28,15 +28,17 @@
 }
 
 .space {
-  width: auto !important; // აიკონს საკუთარი ზომის შენარჩუნების უფლებას ვაძლევთ
-  flex-shrink: 0;        // flex-მა რომ არ შეკუმშოს ავტომატურად
-  padding: 0 10px;       // თუ გინდა გვერდებზეც დაშორება მიუმატო
+  width: auto !important; 
+  flex-shrink: 0;        
+  padding: 0 10px;       
 }
 .space-for-icons {
-  display: flex;
-  justify-content: space-between; // ეს გაწევს მარცხენა და მარჯვენა ბლოკებს კიდეებში
-  align-items: center;
-  width: 100%; // ეს აუცილებელია!
+  // display: flex;
+  // justify-content: space-between; 
+  // align-items: center;
+  // width: 100%; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 0 20px;
 }
 
