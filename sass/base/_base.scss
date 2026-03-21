@@ -9,16 +9,24 @@ body {
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
   margin: 0;
+  padding-right: 7px;
 }
 
 h1, h2, h3 {
   color: $text-active;
 }
 
+h2 {
+  font-size: $font-size-large;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
 h3 {
   font-size: $font-size-base;
  
 }
+
 
 p {
   color: $text-primary;
@@ -34,61 +42,60 @@ p {
   display: grid;
   grid-template-columns: 260px 1fr;
   grid-template-rows: 54px 1fr 81px;
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 5px;
+  row-gap: 5px;
   height: 100vh;
   overflow: hidden;
   position: relative;
+  padding-bottom: 10px;
   
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 
-  &::-webkit-scrollbar {
-        width: 0;
-    }
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: $bg-dark-grey;
-        border-radius: 3px;
-    }
-  
-  
+
 }
 
 .header-container {
   grid-column: 1/-1;
+  grid-row: 1;
   // position: fixed;
   left: 0;
   top: 0;
+  margin-bottom: 16px; /* არაფერი არ შეცვალა ((( */
 }
 
 .sidebar {
-  grid-column-start: 1;
-  grid-row-start: span 2;
+  grid-column: 1;
+  grid-row: 2 / 4;
 }
 
 .main-content {
-  grid-column-start: 2;
-  grid-row-start: 2;
+  grid-column: 2;      
+  grid-row: 2;
+  grid-template-columns: repeat(auto-fit, 170px);
+  justify-content: center;
   border: 1px solid $border-col;
   border-radius: 8px;
   padding: 25px;
+  padding-top: 12px;
   overflow-y: auto;
-  height: 100vh;
- 
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+
+  @include hide-scrollbar; 
 }
 
+
 footer {
-  grid-column: 2/-1;
-  grid-row-start: 3;
-  bottom: 0;
-  left: 269px;
+  grid-column: 2;      
+  grid-row: 3;
   height: 81px;
+  display: flex;
   background-color: $footer-col;
-  border-radius: 8px;
-  width: calc(100vw - 259px);
+  border-radius: 10px;
+  // width: calc(100vw - 259px);
 
 }
 
@@ -101,8 +108,174 @@ footer {
 
 }  
 
-.album {
-  width: 170px;
+// Liked songs main area
+
+.main-liked-songs {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  border-radius: 8px;
+  padding: 37px;
+  overflow-y: auto;
+  height: 100%;
+  // background: linear-gradient(to bottom, #121212, #000000),
+  // radial-gradient(circle at 70% 30%, rgba(50, 50, 50, 0.4), transparent 50%);
+  
+  // // იმისთვის რომ გრადიენტი არ განმეორდეს
+  // // background-repeat: no-repeat;
+  // // background-attachment: fixed;
+ background: radial-gradient(circle at center, #575F70 0%, transparent 70%),
+    linear-gradient(to bottom, #54565F);
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  @include hide-scrollbar;
+}
+
+.liked-song-container {
+  width: 721px;
+  height: 494px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 
+.song-content-wrapper {
+    display: flex;
+    gap: 62px; 
+    align-items: flex-start;
+}
+
+.song-content-wrapper img {
+    width: 500px; 
+    height: 500px;
+    
+}
+
+.icons-and-details {
+    display: flex;
+    width: 529px;
+    align-items: center;
+    justify-content: space-between;
+    // padding-bottom: 21px;
+}
+
+
+.liked-songs-playlist li {
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    margin-bottom: 15px; 
+}
+
+.liked-songs-playlist img {
+  width: 61px;
+  height: 61px;
+}
+
+
+// Bottom Part of liked songs
+
+.song-lyrics-section {
+  margin-top: 54px;
+  width: 100%;
+
+  .lyrics-nav {
+    border-bottom: 1px solid $border-col;
+    margin-bottom: 35px;
+
+    ul {
+      display: flex;
+      gap: 50px;
+      padding-left: 46px;
+
+      li {
+        font-size: 14px;
+        font-weight: 700;
+        color: $text-primary;
+        padding-bottom: 12px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $text-active;
+        }
+      
+        
+      }
+    }
+  }
+
+  .lyrics-nav li.active {
+  color: #fff;
+  position: relative; // აუცილებელია ფსევდო-ელემენტის პოზიციონირებისთვის
+  margin-bottom: 0; // border-bottom აღარ გვაქვს, ამიტომ ეს უბრალო padding-ია
+
+  &::after {
+    content: ''; // ცარიელი შინაარსი, რომ ფსევდო-ელემენტი შეიქმნას
+    position: absolute;
+    bottom: -1.5px; // ძირითად ხაცრისფერ ხაზს რომ დააჯდეს
+    left: 50%; // ჯერ ცენტრში ვსვამთ
+    transform: translateX(-50%); // შემდეგ ვაბალანსებთ ცენტრს
+
+    /* ხაზის ზომა (დაარეგულირე შენით) */
+    width: calc(100% + 20px); // ტექსტის სიგანეს პლუს 20px (10px თითო მხარეს)
+    height: 3px; // ხაზის სისქე
+
+    /* ხაზის ფერი და მომრგვალება */
+    background-color: $brand-color; // მწვანე ფერი background-ად
+    border-radius: 4px; // ბოლოების მომრგვალება
+  }
+}
+
+  .lyrics-container {
+    display: flex;
+    gap: 60px; // დაშორება ხატულებსა და ტექსტს შორის
+
+    .lyrics-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 8px;
+
+      .sidebar-icon {
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+          fill: #b3b3b3;
+        }
+      }
+    }
+
+  
+  }
+}
+
+.lyrics-content {
+  /* ეს თვისება აიძულებს ბრაუზერს აღიქვას Enter-ები */
+  white-space: pre-line; 
+  
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.8; /* ხაზებს შორის დაშორება */
+  letter-spacing: -0.04em;
+  padding-left: 10px;
+  
+  /* თუ გინდა, რომ ტექსტი ძალიან თეთრი არ იყოს და თვალს არ ჭრიდეს */
+  opacity: 0.9;
+  
+  /* პატარა ეფექტი: ტექსტის შერჩევისას (Selection) ფერი */
+  &::selection {
+    background: #1ed760;
+    color: #000;
+  }
+}

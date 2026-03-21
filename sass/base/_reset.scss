@@ -13,7 +13,11 @@ ul, ol {
   margin: 0;
 }
 
+li {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none; 
-  color: inherit;       // ეს მინდა თუ მაინც ისე შევიყვანო ფერი?
+  color: inherit;       /* ეს მინდა თუ მაინც ისე შევიყვანო ფერი? */
 }

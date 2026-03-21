@@ -19,3 +19,18 @@
         color: $bg-dark-grey;
         font-weight: bold;
       }
+
+// Buttons on the page - Liked Songs
+
+.music-genre {
+
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid $text-primary;
+  color: $text-active;
+  padding: 8px 12px;
+  border-radius: 44px;
+  gap: 10px;
+
+}
+

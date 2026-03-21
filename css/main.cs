@@ -2,7 +2,6 @@
 /* დასადგენი მაქვს ეს რისი ფერია */
 /* Spacing & Sizing გასაწერი მაქვს */
 /*  Breakpoints გასაწერი მაქვს */
-/* სქროლის ხაზის გასაქრობად */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -69,6 +68,16 @@ p {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
+.main-layout::-webkit-scrollbar {
+  width: 0;
+}
+.main-layout::-webkit-scrollbar-track {
+  background: transparent;
+}
+.main-layout::-webkit-scrollbar-thumb {
+  background-color: #111111;
+  border-radius: 3px;
+}
 
 .header-container {
   grid-column: 1/-1;
@@ -91,31 +100,27 @@ p {
   border: 1px solid #6E6E6E;
   border-radius: 8px;
   padding: 25px;
-  padding-top: 12px;
   overflow-y: auto;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.main-content::-webkit-scrollbar {
-  display: none;
 }
 
 footer {
-  grid-column: 2;
+  grid-column: 2; /* ზის მე-2 სვეტში (სიდბარის გვერდით) */
   grid-row: 3;
   height: 81px;
   display: flex;
-  background-color: #333842;
-  border-radius: 10px;
 }
 
 .section-name {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.album {
+  width: 170px;
 }
 
 .main-liked-songs {
@@ -128,11 +133,6 @@ footer {
   background: radial-gradient(circle at center, #575F70 0%, transparent 70%), linear-gradient(to bottom, #54565F);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.main-liked-songs::-webkit-scrollbar {
-  display: none;
 }
 
 .liked-song-container {
@@ -469,15 +469,15 @@ footer {
   display: flex;
   align-items: center;
   height: 40px;
-  gap: 15px;
+  gap: 15px; /* მაინც სხვადასხვა დაშორებაა აიკონებს შორის */
   justify-content: center;
 }
 
 .cards-section {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 5px;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .card {
@@ -487,30 +487,27 @@ footer {
   background-color: #060606;
   border-radius: 8px;
   width: 170px;
-  height: 254px;
   position: relative;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .card::before, .card::after {
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 10px 10px 0 0;
-  z-index: -9;
-  background-color: currentColor;
+  height: 10px;
+  border-radius: 8px 8px 0 0;
+  z-index: -1;
 }
 .card::before {
-  height: 8px;
-  top: -10px;
-  width: 154px;
-  opacity: 0.6;
+  top: -6px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .card::after {
-  height: 5px;
-  top: -17px;
-  width: 133px;
-  opacity: 0.3;
+  top: -12px;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .card img {
   width: 170px;
@@ -527,8 +524,9 @@ footer {
 }
 
 .card-container {
+  overflow: auto;
   display: flex;
-  gap: 30px;
+  gap: 11px;
 }
 
 .library-card-grid {
@@ -540,15 +538,7 @@ footer {
 .album-round-item {
   border-radius: 50% !important;
   aspect-ratio: 1/1 !important;
-  overflow: hidden;
-}
-
-.round-card {
-  border-radius: 50% !important;
-  aspect-ratio: 1/1 !important;
-  overflow: hidden;
-}
-
+} /* ვააახ, მაინც არ ეშველა */
 .grid-item {
   position: relative;
   display: inline-block;
@@ -592,7 +582,6 @@ footer {
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  padding: 20px;
 }
 .player:hover {
   background-color: #202020;
@@ -602,15 +591,17 @@ footer {
   display: flex;
   align-items: center;
   gap: 15px;
-  justify-content: flex-start;
+  justify-content: flex-start; /* მიაწექი მარცხნივ */
+  flex: 1; /* დაიკავოს თანაბარი ადგილი */
 }
 
 .player-right {
   display: flex;
   align-items: center;
   gap: 15px;
-  justify-content: flex-end;
-  margin-left: auto;
+  justify-content: flex-end; /* მიაწექი ბოლომდე მარჯვნივ */
+  flex: 1; /* დაიკავოს თანაბარი ადგილი */
+  padding-right: 20px; /* დაამატე პატარა დაშორება კიდიდან, რომ სუნთქავდეს */
 }
 
 .space {
@@ -620,10 +611,9 @@ footer {
 }
 
 .space-for-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 20px;
 }
 
 .song-info {
@@ -633,22 +623,16 @@ footer {
 
 .song-text {
   padding-left: 15px;
-  display: flex;
-  flex-direction: column;
 }
 
-.song-text p:first-child {
-  color: #E0E0E0;
-}
-
-.current-song {
-  width: 51px;
-  height: 51px;
-  min-width: 51px;
-  min-height: 51px;
+.player .player-left .song-info .current-song {
+  width: 51px !important;
+  height: 51px !important;
+  min-width: 51px; /* ვერ გაიზარდა ეს ფოტო ვერაფრით */
+  min-height: 51px; /* დავამატოთ ესეც */
+  flex-shrink: 0; /* აუკრძალოთ შეკუმშვა/გაწელვა */
   object-fit: cover;
-  border-radius: 4px;
-  flex-shrink: 0;
+  border-radius: 3px; /* მაინც არ ეშველა(((((((((((((((( */
 }
 
 /**
@@ -775,4 +759,4 @@ footer {
   font-style: italic;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.cs.map */

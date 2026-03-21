@@ -21,7 +21,7 @@
   
 }
 
-// 1st list in main navigation - top right
+// Styles for 1st list in main navigation - top right
 
 .main-nav-list {
   display: flex;
@@ -56,11 +56,34 @@
         @include hover-active;
       }
 
+      .nav-icon path {
+  stroke: $text-primary; // ან შენი სასურველი საწყისი ფერი
+  transition: stroke 0.3s ease;
+}     
+
+&:hover {
+    @include hover-active;
+    
+    // 2. ჰოვერის დროს შეიცვალოს path-ის ფერი
+    .nav-icon path {
+      stroke: $text-active; // აქ მიუთითე ის ფერი, რომელიც გინდა ჰოვერზე
+  
+    }
+
+  }
+
     }
   }
 }
 
-// 2nd list / Top left navigation with icons inside
+// .nav-icon-double {
+//   padding: 6px;   
+// }
+
+/* ეს აიკონი ჯიუტობს */
+
+
+// Styles for 2nd list / Top left navigation with icons inside
 
 .action-nav-list {
   display: flex;
@@ -107,3 +130,13 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.top-nav-link {
+  display: flex;       
+  align-items: center; 
+  height: 40px;       
+  gap: 15px;          
+  justify-content: center;
+}
+
+

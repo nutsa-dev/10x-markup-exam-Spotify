@@ -18,7 +18,7 @@ $brand-color: #13BF51; //brand's iconic accent green
 
 $footer-col: #333842;
 $border-col: #6E6E6E;
-$color: #1A1A1A;
+$color: #1A1A1A;         /* დასადგენი მაქვს ეს რისი ფერია */
 
 
 
@@ -29,12 +29,13 @@ $font-family-base: 'Satoshi-Light';
 $font-size-base: 14px; 
 $font-size-small: 12px; 
 $font-size-medium: 18px;
-$font-size-large: 22px;  
+$font-size-large: 20px;  
+$font-size-larger: 22px; 
 
 $spacing-xs: 2px;
 
 
-// Spacing & Sizing  // გასაწერი მაქვს     
+ /* Spacing & Sizing გასაწერი მაქვს */ 
 
 
 $border-radius-base: 7.25px; 
@@ -42,8 +43,10 @@ $border-radius-small: 6.02px;
 $border-radius-large: 10px; 
 
 
-// Breakpoints // გასაწერი მაქვს
+/*  Breakpoints გასაწერი მაქვს */
 
+
+// Font Weights
 
 $font-weight-normal: 400;
 $font-weight-medium: 500;

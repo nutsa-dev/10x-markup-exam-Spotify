@@ -7,10 +7,10 @@
   color: $text-primary;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   width: 259px;
   height: 100vh;
-  padding-top: 12px;
+  // padding-top: 12px;
   position: fixed;
   top: 54px;
   left: 0;
@@ -20,10 +20,12 @@
 .sidebar-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 11px; 
   
 
 }
+
 
 .sidebar-nav .nav-link a {
   
@@ -33,13 +35,31 @@ padding-left: 20px;
         @include hover-active;
       }
 
+
+.nav-icon path {
+  stroke: $text-primary; // ან შენი სასურველი საწყისი ფერი
+  transition: stroke 0.3s ease;
+}     
+
+&:hover {
+    @include hover-active;
+    
+    // 2. ჰოვერის დროს შეიცვალოს path-ის ფერი
+    .nav-icon path {
+      stroke: $text-active; // აქ მიუთითე ის ფერი, რომელიც გინდა ჰოვერზე
+  
+    }
+
+  }
 }
 
 .nav-link {
-  @mixin hover-active {
+  &:hover {
   color: $bg-dark-grey;
+  font-weight: 600;
   cursor: pointer;
   transition: color 0.3s ease;
+  
 }
     
 }
@@ -48,16 +68,17 @@ padding-left: 20px;
 .nav-link {
   display: flex;       
   align-items: center; 
-  // height: 40px;       
-  // gap: 15px;           /* მაინც სხვადასხვა დაშორებაა აიკონებს შორის */
+  height: 40px;       
   justify-content: center;
   
   a {
     display: flex;     
     align-items: center;
+    gap: 10px;
     color: $text-primary;
     text-decoration: none;  
     width: 100%;       
-    height: 100%;      
+    height: 100%;       
   }
 }
+

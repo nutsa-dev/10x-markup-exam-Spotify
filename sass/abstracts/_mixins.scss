@@ -51,6 +51,7 @@
 //   gap: $gap;
 // }
 
+
 // Content inside header
 
 @mixin content-header {
@@ -60,3 +61,22 @@
   
   
 }
+
+/* სქროლის ხაზის გასაქრობად */
+
+@mixin hide-scrollbar {
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE/Edge
+  &::-webkit-scrollbar {
+    display: none; // Chrome/Safari/Opera
+  }
+}
+
+
+// For making images round
+
+@mixin round {
+    border-radius: 50% !important;
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden;
+}    
