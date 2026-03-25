@@ -4,7 +4,7 @@
 
 
 .header-navigation {
-
+  font-size: $font-size-medium;
   align-items: center; 
   height: 54px;
   width: 100%;
@@ -140,3 +140,10 @@
 }
 
 
+// Search Page
+
+.search-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

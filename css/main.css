@@ -256,9 +256,205 @@ footer {
   color: #000;
 }
 
+.search-section {
+  display: flex;
+  gap: 30px;
+}
+
+.search-item {
+  width: 170px;
+  height: 170px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-item h3 {
+  color: #E0E0E0;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+.search-item img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: -10px;
+  right: -25px;
+}
+
+.search-item:hover img { /* ეს ძალიან კარგი მაგალითია, მანამდე მარტო ფოტოზე იყო hover */
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  transform: rotate(-30deg);
+  transition: 0.8s ease-in-out;
+}
+
+.search-item:hover h3 {
+  left: 50%;
+  top: 0.5%;
+  transform: translate(-50%);
+  font-weight: 700;
+  white-space: nowrap;
+  transition: 0.8s ease-in-out;
+}
+
+.friends-activity-main-content {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border: 1px solid #6E6E6E;
+  border-radius: 8px;
+  padding: 25px;
+  padding-top: 12px;
+  overflow-y: auto;
+  height: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.friends-activity-main-content::-webkit-scrollbar {
+  display: none;
+}
+
+.main-content-left {
+  flex: 1; /* იკავებს მაქსიმალურ სივრცეს */
+  min-width: 0;
+}
+
+.main-content-right {
+  flex: 0 0 358px; /* ფიქსირებული სიგანე, არ იკუმშება */
+  padding: 10px 20px; /* ზედმეტი 60px padding მოვაკელით, რომ ფოტოს დაემსგავსოს */
+  border-left: 1px solid rgba(255, 255, 255, 0.1); /* სურვილისამებრ, გამყოფი ხაზი */
+  /* შიდა ელემენტების სტილი */
+}
+.main-content-right .section-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.main-content-right .section-name h2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  color: #b3b3b3;
+}
+.main-content-right .section-name .navigation-arrows img {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.main-content-right .section-name .navigation-arrows img:hover {
+  opacity: 1;
+}
+.main-content-right .activity > div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: auto auto;
+  gap: 2px 12px;
+  margin-bottom: 20px;
+  align-items: center;
+  /* ავატარი */
+}
+.main-content-right .activity > div > img:first-child {
+  grid-row: span 2;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.main-content-right .activity > div {
+  /* მეგობრის სახელი */
+}
+.main-content-right .activity > div p.activity {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.main-content-right .activity > div {
+  /* სიმღერა და დრო */
+}
+.main-content-right .activity > div .activ-description {
+  margin: 0;
+  font-size: 12px;
+  color: #a7a7a7;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-content-right .activity > div .activ-description b {
+  color: #a7a7a7; /* Spotify-ზე სიმღერის სახელიც ნაცრისფერია ხოლმე აქ */
+  font-weight: 400;
+  margin-right: 4px;
+}
+.main-content-right .activity > div .activ-description img { /* მწვანე აიქონი */
+  width: 12px;
+  margin-right: 6px;
+}
+
+tr:hover {
+  color: #13BF51;
+}
+
+.playlist-table {
+  width: 60%;
+  border-collapse: collapse;
+}
+
+.playlist-table th {
+  padding: 15px;
+  border-bottom: 1px solid #898989;
+  font-size: 400;
+  text-align: left;
+}
+
+.playlist-table td {
+  padding: 10px;
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.track-info img {
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.track-info div {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-name {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+}
+
+.heart svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .sidebar {
   background-color: #060606;
   color: #898989;
+  font-size: 18px;
   display: flex;
   flex-direction: column;
   width: 259px;
@@ -272,6 +468,11 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
   gap: 11px;
 }
 
@@ -341,6 +542,21 @@ footer {
   font-weight: bold;
 }
 
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-buttons img:hover {
+  color: #E0E0E0;
+  background-color: #202020;
+  border-color: #6E6E6E;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
 .music-genre {
   text-decoration: none;
   background-color: transparent;
@@ -352,6 +568,7 @@ footer {
 }
 
 .header-navigation {
+  font-size: 18px;
   align-items: center;
   height: 54px;
   width: 100%;
@@ -473,6 +690,12 @@ footer {
   justify-content: center;
 }
 
+.search-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .cards-section {
   display: flex;
   flex-direction: column;
@@ -517,6 +740,8 @@ footer {
   border-radius: 4px;
 }
 .card h3 {
+  display: flex;
+  justify-content: space-between;
   padding: 0;
   padding-top: 6.5px;
 }
@@ -524,6 +749,23 @@ footer {
   padding: 0;
   margin: 0;
   padding-top: 8px;
+}
+.card .card-img-container {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 4px;
+  display: block;
+}
+.card .card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+.card:hover img {
+  filter: brightness(0.6);
 }
 
 .card-container {
@@ -552,6 +794,7 @@ footer {
 .grid-item {
   position: relative;
   display: inline-block;
+  width: 170px;
 }
 .grid-item .pin-icon {
   position: absolute;
@@ -570,8 +813,8 @@ footer {
 
 .pin-icon-down {
   position: absolute;
-  bottom: 40px;
-  right: 40px;
+  bottom: 20px;
+  right: 20px;
   background-color: #111111;
   border-radius: 50%;
   display: flex;
@@ -582,6 +825,14 @@ footer {
 .pin-icon-down svg {
   width: 35px;
   height: 35px;
+}
+
+.grid-item h3 {
+  display: flex;
+  justify-content: space-between;
+  min-width: 0;
+  width: 100%;
+  padding-top: 6.5px;
 }
 
 .player {

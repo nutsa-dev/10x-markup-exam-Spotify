@@ -80,3 +80,8 @@
     aspect-ratio: 1 / 1 !important;
     overflow: hidden;
 }    
+
+
+@mixin green-hover {
+  color: $brand-color;
+}

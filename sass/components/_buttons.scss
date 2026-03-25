@@ -18,7 +18,23 @@
         background-color: $text-active; 
         color: $bg-dark-grey;
         font-weight: bold;
+        
+       
       }
+
+// Lybrary
+
+.filter-buttons {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+.filter-buttons img:hover {
+  @include hover-active;
+}
+
 
 // Buttons on the page - Liked Songs
 

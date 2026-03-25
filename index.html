@@ -63,7 +63,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-link"><a href="#">
+                        <li class="nav-link"><a href="./pages/search.html">
 
                                 <svg class="nav-icon" width="41" height="41" viewBox="0 0 41 41" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -302,9 +302,12 @@
 
                 </div>
 
-                <div class="adjust-icon">
-                    <img src="./assets/icons/icons-big/Name=Adjust, Filled=No.svg" alt="Adjust" title="Adjust">
 
+                <div class="adjust-icon">
+
+                    <a href="/pages/friends-activity.html">
+                        <img src="./assets/icons/icons-big/Name=Adjust, Filled=No.svg" alt="Adjust" title="Adjust">
+                    </a>
 
                 </div>
 
@@ -668,7 +671,8 @@
         <footer class="player">
             <div class="space-for-icons">
                 <div class="player-left">
-                    <img src="./assets/icons/icons-big/Name=Play, Filled=No.svg" alt="Play" onclick="toggleAudio(this)" style="cursor: pointer;">
+                    <img src="./assets/icons/icons-big/Name=Play, Filled=No.svg" alt="Play" onclick="toggleAudio(this)"
+                        style="cursor: pointer;">
                     <img src="./assets/icons/icons-big/Name=Prev, Filled=No.svg" alt="Previous">
                     <img class="player-icons" src="./assets/icons/icons-big/Name=Next, Filled=No.svg" alt="Next">
                     <img src="./assets/icons/icons-big/Name=Shuffle, Filled=No.svg" alt="Shuffle">
@@ -681,9 +685,11 @@
 
 
                     <!-- Song Link -->
-                      <audio id="spotify-audio">
-    <source src="assets/music/Daft Punk - Get Lucky (Official Video) feat. Pharrell Williams and Nile Rodgers.mp3" type="audio/mpeg">
-</audio>
+                    <audio id="spotify-audio">
+                        <source
+                            src="assets/music/Daft Punk - Get Lucky (Official Video) feat. Pharrell Williams and Nile Rodgers.mp3"
+                            type="audio/mpeg">
+                    </audio>
 
                     <div class="song-info">
                         <img class=album class="current-song" src="./assets/icons/player-icons/Rectangle 6.svg"
@@ -719,22 +725,22 @@
 
 
     </div>
-  <!-- Audio -->
-   <script>
-    function toggleAudio(btn) { 
-        const audio = document.getElementById('spotify-audio');
-        
-        if (audio.paused) {
-            audio.play();
-            // აქ მიუთითე შენი Pause აიკონის გზა
-            btn.src = "./assets/icons/icons-big/Name=Pause, Filled=No.svg";
-        } else {
-            audio.pause();
-            // აქ დააბრუნე Play აიკონი
-            btn.src = "./assets/icons/icons-big/Name=Play, Filled=No.svg";
+    <!-- Audio -->
+    <script>
+        function toggleAudio(btn) {
+            const audio = document.getElementById('spotify-audio');
+
+            if (audio.paused) {
+                audio.play();
+                // აქ მიუთითე შენი Pause აიკონის გზა
+                btn.src = "./assets/icons/icons-big/Name=Pause, Filled=No.svg";
+            } else {
+                audio.pause();
+                // აქ დააბრუნე Play აიკონი
+                btn.src = "./assets/icons/icons-big/Name=Play, Filled=No.svg";
+            }
         }
-    }
-</script>
+    </script>
 
 
 </body>

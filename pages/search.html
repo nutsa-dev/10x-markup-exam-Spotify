@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
-    <title>Document</title>
+    <title>Search</title>
 </head>
 
 <body>
+
 
     <div class="main-layout container">
 
@@ -63,7 +64,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-link"><a href="./search.html">
+                        <li class="nav-link"><a href="#">
 
                                 <svg class="nav-icon" width="41" height="41" viewBox="0 0 41 41" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -80,6 +81,7 @@
                 </div>
 
                 <!-- 2nd list / Top left navigation with icons inside -->
+
 
                 <div class="icon-nav">
                     <ul class="action-nav-list">
@@ -174,6 +176,7 @@
             <nav class="sidebar-content">
                 <ul class="sidebar-nav">
                     <li class="nav-link"><a href="#">
+
                             <svg class="nav-icon" width="41" height="41" viewBox="0 0 41 41" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -181,7 +184,10 @@
                                     stroke="#898989" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
 
-                            <span>Pins</span></a></li>
+                            <span>Pins</span>
+                        </a>
+                    </li>
+
 
                     <li class="nav-link"><a href="#">
                             <svg class="nav-icon" width="41" height="41" viewBox="0 0 41 41" fill="none"
@@ -198,7 +204,7 @@
                             </svg>
 
                             <span>Playlists</span></a></li>
-                    <li class="nav-link"><a href="#">
+                    <li class="nav-link"><a href="/pages/likedsongs.html">
 
                             <svg class="nav-icon" width="41" height="41" viewBox="0 0 41 41" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -284,202 +290,199 @@
             </nav>
         </aside>
 
-        <!-- Main Content of liked songs page -->
-
-
+        <!-- Main Content of page -->
 
         <main class="main-content">
 
-            <!-- Inner navbar -->
 
-            <section class="library-content-header">
+            <div class="card-grid">
 
-                <div class="adjust-icon">
-                    <img src="../assets/icons/icons-big/Name=Add Simple, Filled=No.svg" alt="Add">
 
+                <!-- Recent searches -->
+
+
+                <section class="cards-section">
+
+                    <div class="section-name">
+
+                        <h2>Recent searches</h2>
+                        <img src="../assets/icons/icons-big/Name=More, Filled=No.svg" alt="More">
+                    </div>
+
+
+
+                    <div class="card-container">
+
+                        <div class="grid-item">
+                            <div class="pin-icon-down">
+                                <svg width="20" height="20" viewBox="0 0 41 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M29.3209 16.4258L30.8388 17.9436M29.3209 16.4258L22.6206 23.1262C22.4974 23.2493 22.4191 23.4101 22.3981 23.5829L22.0634 26.3362C21.9851 26.9808 21.1987 27.2521 20.7395 26.7929L16.811 22.8644M29.3209 16.4258L23.2496 10.3544M21.7318 8.8366L23.2496 10.3544M23.2496 10.3544L16.5492 17.0548C16.4261 17.1779 16.2653 17.2562 16.0925 17.2773L13.3392 17.6119C12.6946 17.6903 12.4233 18.4767 12.8824 18.9358L16.811 22.8644M16.811 22.8644L11.6432 28.0322"
+                                        stroke="#1ED760" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <img class=album-round-item src="../assets/images/library-images/image 4.png" alt="">
+
+                            <h3>David Bowie</h3>
+
+
+                        </div>
+                        <div class="grid-item">
+                            <div class="pin-icon-down">
+                                <svg width="20" height="20" viewBox="0 0 41 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M29.3209 16.4258L30.8388 17.9436M29.3209 16.4258L22.6206 23.1262C22.4974 23.2493 22.4191 23.4101 22.3981 23.5829L22.0634 26.3362C21.9851 26.9808 21.1987 27.2521 20.7395 26.7929L16.811 22.8644M29.3209 16.4258L23.2496 10.3544M21.7318 8.8366L23.2496 10.3544M23.2496 10.3544L16.5492 17.0548C16.4261 17.1779 16.2653 17.2562 16.0925 17.2773L13.3392 17.6119C12.6946 17.6903 12.4233 18.4767 12.8824 18.9358L16.811 22.8644M16.811 22.8644L11.6432 28.0322"
+                                        stroke="#1ED760" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <img class=album-round-item src="../assets/images/library-images/image 3.png" alt="">
+
+                            <h3>Daft Punk</h3>
+
+
+                        </div>
+
+                        <article class="card">
+                            <img class=album src="../assets/images/home-pg-images/images 1 (2).png" alt="Rock Mix">
+                            <h3>Black Holes...</h3>
+                            <p>Muse</p>
+
+                        </article>
+                    </div>
+
+                </section>
+
+
+
+                <!-- Section for Colorful Cards -->
+
+
+                <div class="search-main-container">
+
+
+                    <h2>Browse All</h2>
+
+
+                    <div class="search-nav">
+                        <h3>Discover</h3>
+                        <div class="navigation-arrows">
+                            <img src="../assets/icons/icons-big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="../assets/icons/icons-big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                        </div>
+                    </div>
+
+                    <div class="search-section">
+
+                        <article class="search-item" style="background-color: #1E3264;">
+                            <img src="/assets/images/search/l (1).png" alt="">
+                            <h3>Made For You</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #BA5D07;">
+                            <img src="/assets/images/search/l (8).png" alt="">
+                            <h3>New Releases</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #1E3264;">
+                            <img src="/assets/images/search/l (7).png" alt="">
+                            <h3>Spotify Classic</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #8D67AB;">
+                            <img src="/assets/images/search/l (6).png" alt="">
+                            <h3>Charts</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #B02897;">
+                            <img src="/assets/images/search/l (5).png" alt="">
+                            <h3>Trending</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #8D67AB;">
+                            <img src="/assets/images/search/l (4).png" alt="">
+                            <h3>Discover</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #777777;">
+                            <img src="/assets/images/search/l (3).png" alt="">
+                            <h3>Spotify Singles</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #BA5D07;">
+                            <img src="/assets/images/search/l (2).png" alt="">
+                            <h3>Decades</h3>
+                        </article>
+
+
+                    </div>
+
+
+                    <!-- 2nd Section -->
+
+                    <div class="search-nav">
+                        <h3>Genres</h3>
+                        <div class="navigation-arrows">
+                            <img src="../assets/icons/icons-big/Name=Arrow-Left, Filled=No.svg" alt="Arrow-left">
+                            <img src="../assets/icons/icons-big/Name=Arrow-Right, Filled=No.svg" alt="Arrow-right">
+                        </div>
+                    </div>
+
+                    <div class="search-section">
+                        <article class="search-item" style="background-color: #148A08;">
+                            <img src="/assets/images/search/s (2).png" alt="">
+                            <h3>Pop</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #D84000;">
+                            <img src="/assets/images/search/s (1).png" alt="">
+                            <h3>Country</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #503750;">
+                            <img src="/assets/images/search/s (8).png" alt="">
+                            <h3>Hip-Hop</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #006450;">
+                            <img src="/assets/images/search/s (7).png" alt="">
+                            <h3>Rock</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #E91429;">
+                            <img src="/assets/images/search/s (6).png" alt="">
+                            <h3>Indie</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #1E3264;">
+                            <img src="/assets/images/search/s (5).png" alt="">
+                            <h3>Punk</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #E91429;">
+                            <img src="/assets/images/search/s (4).png" alt="">
+                            <h3>Metal</h3>
+                        </article>
+
+                        <article class="search-item" style="background-color: #537AA1;">
+                            <img src="/assets/images/search/s (3).png" alt="">
+                            <h3>Instrumental</h3>
+                        </article>
+
+                    </div>
 
                 </div>
 
-                <div class="filter-buttons">
-                    <img src="../assets/icons/icons-big/Name=List, Filled=No.svg" alt="List">
-                    <img src="../assets/icons/icons-big/Name=Grid, Filled=No.svg" alt="Grid">
-                    <img src="../assets/icons/icons-big/Name=Sort, Filled=No.svg" alt="Sort">
-                    <span>Recent</span>
-                    <img src="../assets/icons/icons-big/Name=Filter, Filled=No.svg" alt="Filter">
-                    <span>Group</span>
-                    <img src="../assets/icons/icons-big/Name=Search, Filled=No.svg" alt="Search">
-
-                </div>
-
-
-            </section>
-
-            <!-- Table -->
-
-            <table class="playlist-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Title</th>
-                        <th>Album</th>
-                        <th>Duration</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td class="track-info">
-                            <img src="/assets/images/liked/Rectangle 6.png" alt="cover">
-                            <a href="/pages/getlucky.html">
-                                <div>
-                                    <span class="track-name">Get Lucky</span>
-                                    <span class="artist-name">Daft Punk</span>
-                                </div>
-                            </a>
-                        </td>
-
-                        <td>Random Access Memories</td>
-                        <td>4:35</td>
-                        <td class="heart"><svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.0692 13.5685L20.2054 15.3745L18.3416 13.5685C16.3872 11.6749 13.2521 11.7794 11.4282 13.7991C9.65844 15.7589 9.41479 18.6943 11.0174 20.793C11.2143 21.0509 11.4079 21.2979 11.5922 21.524C12.7586 22.9549 15.3036 25.4539 16.5788 26.7949C17.5209 27.7857 18.3677 28.6121 19.0057 29.214C19.6794 29.8496 20.7194 29.8357 21.3944 29.2014C22.5707 28.0961 24.3746 26.3743 25.6453 25.0379C26.9205 23.6969 27.6522 22.9549 28.8186 21.524C29.0029 21.2979 29.1965 21.0509 29.3934 20.793C30.996 18.6943 30.7524 15.7589 28.9826 13.7991C27.1587 11.7794 24.0236 11.6749 22.0692 13.5685Z"
-                                    fill="#13BF51" stroke="#13BF51" stroke-width="2.02054" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></td>
-                    </tr>
-
-
-                    <tr>
-                        <td>2</td>
-                        <td class="track-info">
-                            <img src="/assets/images/liked/Rectangle 6.png" alt="cover">
-                            <div>
-                                <span class="track-name">Instant Crush</span>
-                                <span class="artist-name">Daft Punk, Julian Casablancas</span>
-                            </div>
-                        </td>
-                        <td>Random Access Memories</td>
-                        <td>5:37</td>
-                        <td class="heart"><svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.0692 13.5685L20.2054 15.3745L18.3416 13.5685C16.3872 11.6749 13.2521 11.7794 11.4282 13.7991C9.65844 15.7589 9.41479 18.6943 11.0174 20.793C11.2143 21.0509 11.4079 21.2979 11.5922 21.524C12.7586 22.9549 15.3036 25.4539 16.5788 26.7949C17.5209 27.7857 18.3677 28.6121 19.0057 29.214C19.6794 29.8496 20.7194 29.8357 21.3944 29.2014C22.5707 28.0961 24.3746 26.3743 25.6453 25.0379C26.9205 23.6969 27.6522 22.9549 28.8186 21.524C29.0029 21.2979 29.1965 21.0509 29.3934 20.793C30.996 18.6943 30.7524 15.7589 28.9826 13.7991C27.1587 11.7794 24.0236 11.6749 22.0692 13.5685Z"
-                                    fill="#13BF51" stroke="#13BF51" stroke-width="2.02054" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td class="track-info">
-                            <img src="/assets/images/liked/Rectangle 6-1.png" alt="Plastic Beach">
-                            <div>
-                                <span class="track-name">On Melancholy Hill</span>
-                                <span class="artist-name">Gorillaz</span>
-                            </div>
-                        </td>
-                        <td>Plastic Beach</td>
-                        <td>3:53</td>
-                        <td class="heart"><svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.0692 13.5685L20.2054 15.3745L18.3416 13.5685C16.3872 11.6749 13.2521 11.7794 11.4282 13.7991C9.65844 15.7589 9.41479 18.6943 11.0174 20.793C11.2143 21.0509 11.4079 21.2979 11.5922 21.524C12.7586 22.9549 15.3036 25.4539 16.5788 26.7949C17.5209 27.7857 18.3677 28.6121 19.0057 29.214C19.6794 29.8496 20.7194 29.8357 21.3944 29.2014C22.5707 28.0961 24.3746 26.3743 25.6453 25.0379C26.9205 23.6969 27.6522 22.9549 28.8186 21.524C29.0029 21.2979 29.1965 21.0509 29.3934 20.793C30.996 18.6943 30.7524 15.7589 28.9826 13.7991C27.1587 11.7794 24.0236 11.6749 22.0692 13.5685Z"
-                                    fill="#13BF51" stroke="#13BF51" stroke-width="2.02054" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td class="track-info">
-                            <img src="/assets/images/liked/Rectangle 6-2.png" alt="Soft Cell">
-                            <div>
-                                <span class="track-name">Tainted Love</span>
-                                <span class="artist-name">Soft Cell</span>
-                            </div>
-                        </td>
-                        <td>Non-Stop Erotic Cabaret</td>
-                        <td>2:33</td>
-                        <td class="heart">
-                            <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.0692 13.5685L20.2054 15.3745L18.3416 13.5685C16.3872 11.6749 13.2521 11.7794 11.4282 13.7991C9.65844 15.7589 9.41479 18.6943 11.0174 20.793C11.2143 21.0509 11.4079 21.2979 11.5922 21.524C12.7586 22.9549 15.3036 25.4539 16.5788 26.7949C17.5209 27.7857 18.3677 28.6121 19.0057 29.214C19.6794 29.8496 20.7194 29.8357 21.3944 29.2014C22.5707 28.0961 24.3746 26.3743 25.6453 25.0379C26.9205 23.6969 27.6522 22.9549 28.8186 21.524C29.0029 21.2979 29.1965 21.0509 29.3934 20.793C30.996 18.6943 30.7524 15.7589 28.9826 13.7991C27.1587 11.7794 24.0236 11.6749 22.0692 13.5685Z"
-                                    fill="#13BF51" stroke="#13BF51" stroke-width="2.02054" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td class="track-info">
-                            <img src="/assets/images/liked/Rectangle 6-3.png" alt="Discovery">
-                            <div>
-                                <span class="track-name">One More Time</span>
-                                <span class="artist-name">Daft Punk</span>
-                            </div>
-                        </td>
-                        <td>Discovery</td>
-                        <td>5:20</td>
-                        <td class="heart"><svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.0692 13.5685L20.2054 15.3745L18.3416 13.5685C16.3872 11.6749 13.2521 11.7794 11.4282 13.7991C9.65844 15.7589 9.41479 18.6943 11.0174 20.793C11.2143 21.0509 11.4079 21.2979 11.5922 21.524C12.7586 22.9549 15.3036 25.4539 16.5788 26.7949C17.5209 27.7857 18.3677 28.6121 19.0057 29.214C19.6794 29.8496 20.7194 29.8357 21.3944 29.2014C22.5707 28.0961 24.3746 26.3743 25.6453 25.0379C26.9205 23.6969 27.6522 22.9549 28.8186 21.524C29.0029 21.2979 29.1965 21.0509 29.3934 20.793C30.996 18.6943 30.7524 15.7589 28.9826 13.7991C27.1587 11.7794 24.0236 11.6749 22.0692 13.5685Z"
-                                    fill="#13BF51" stroke="#13BF51" stroke-width="2.02054" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td class="track-info">
-                            <img src="/assets/images/liked/Rectangle 6-4.png" alt="MGMT">
-                            <div>
-                                <span class="track-name">Electric Feel</span>
-                                <span class="artist-name">MGMT</span>
-                            </div>
-                        </td>
-                        <td>Oracular Spectacular</td>
-                        <td>3:49</td>
-                        <td class="heart"><svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.0692 13.5685L20.2054 15.3745L18.3416 13.5685C16.3872 11.6749 13.2521 11.7794 11.4282 13.7991C9.65844 15.7589 9.41479 18.6943 11.0174 20.793C11.2143 21.0509 11.4079 21.2979 11.5922 21.524C12.7586 22.9549 15.3036 25.4539 16.5788 26.7949C17.5209 27.7857 18.3677 28.6121 19.0057 29.214C19.6794 29.8496 20.7194 29.8357 21.3944 29.2014C22.5707 28.0961 24.3746 26.3743 25.6453 25.0379C26.9205 23.6969 27.6522 22.9549 28.8186 21.524C29.0029 21.2979 29.1965 21.0509 29.3934 20.793C30.996 18.6943 30.7524 15.7589 28.9826 13.7991C27.1587 11.7794 24.0236 11.6749 22.0692 13.5685Z"
-                                    fill="#13BF51" stroke="#13BF51" stroke-width="2.02054" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td class="track-info">
-                            <img src="/assets/images/liked/Rectangle 6.png" alt="RAM">
-                            <div>
-                                <span class="track-name">Give Life Back to Music</span>
-                                <span class="artist-name">Daft Punk</span>
-                            </div>
-                        </td>
-                        <td>Random Access Memories</td>
-                        <td>4:35</td>
-                        <td class="heart"><svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.0692 13.5685L20.2054 15.3745L18.3416 13.5685C16.3872 11.6749 13.2521 11.7794 11.4282 13.7991C9.65844 15.7589 9.41479 18.6943 11.0174 20.793C11.2143 21.0509 11.4079 21.2979 11.5922 21.524C12.7586 22.9549 15.3036 25.4539 16.5788 26.7949C17.5209 27.7857 18.3677 28.6121 19.0057 29.214C19.6794 29.8496 20.7194 29.8357 21.3944 29.2014C22.5707 28.0961 24.3746 26.3743 25.6453 25.0379C26.9205 23.6969 27.6522 22.9549 28.8186 21.524C29.0029 21.2979 29.1965 21.0509 29.3934 20.793C30.996 18.6943 30.7524 15.7589 28.9826 13.7991C27.1587 11.7794 24.0236 11.6749 22.0692 13.5685Z"
-                                    fill="#13BF51" stroke="#13BF51" stroke-width="2.02054" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></td>
-                    </tr>
-                </tbody>
-            </table>
-
-
-
-
+            </div>
 
 
         </main>
 
-
-        <footer class="player">
+        <!-- Footer -->
+         <footer class="player">
             <div class="space-for-icons">
                 <div class="player-left">
                     <img src="../assets/icons/icons-big/Name=Pause, Filled=No.svg" alt="Pause">

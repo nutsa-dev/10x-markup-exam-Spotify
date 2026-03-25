@@ -279,3 +279,219 @@ footer {
     color: #000;
   }
 }
+
+
+
+// Search Page
+
+.search-section {
+  display: flex;
+  gap: 30px;
+}
+
+.search-item {
+  width: 170px;
+  height: 170px;
+  border-radius: 12px;
+  position: relative; 
+  overflow: hidden; 
+}
+
+.search-item h3 {
+  color: $text-active;
+  font-size: $font-size-large;
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2; 
+}
+
+.search-item img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: -10px; 
+  right: -25px; 
+}
+
+// .search-item img:hover  
+.search-item:hover img { /* ეს ძალიან კარგი მაგალითია, მანამდე მარტო ფოტოზე იყო hover */
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  bottom: 0px; 
+  right: 0px;  
+  transform: rotate(-30deg); 
+  transition: 0.8s ease-in-out;
+
+}
+
+.search-item:hover h3 {
+  left: 50%;
+  top: 0.5%;
+  transform: translate(-50%);
+  font-weight: 700;
+  white-space: nowrap; 
+  transition: 0.8s ease-in-out;
+}
+
+
+// Friends Activity
+
+.friends-activity-main-content {
+  grid-column: 2;      
+  grid-row: 2;
+  display: flex;         
+  flex-direction: row;
+  gap: 20px;
+ 
+  
+  border: 1px solid $border-col;
+  border-radius: 8px;
+  padding: 25px;
+  padding-top: 12px;
+  overflow-y: auto;
+  height: 100%;
+
+  @include hide-scrollbar; 
+}
+
+.main-content-left {
+  flex: 1; /* იკავებს მაქსიმალურ სივრცეს */
+  min-width: 0;
+}
+
+.main-content-right {
+  flex: 0 0 358px; /* ფიქსირებული სიგანე, არ იკუმშება */
+  padding: 10px 20px; /* ზედმეტი 60px padding მოვაკელით, რომ ფოტოს დაემსგავსოს */
+  border-left: 1px solid rgba(255, 255, 255, 0.1); /* სურვილისამებრ, გამყოფი ხაზი */
+
+  /* შიდა ელემენტების სტილი */
+  .section-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    h2 {
+      font-size: $font-size-base;
+      font-weight: 700;
+      margin: 0;
+      color: #b3b3b3;
+    }
+    
+    .navigation-arrows img {
+      cursor: pointer;
+      opacity: 0.7;
+      &:hover { opacity: 1; }
+    }
+  }
+
+  .activity > div {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px 12px;
+    margin-bottom: 20px;
+    align-items: center;
+
+    /* ავატარი */
+    & > img:first-child {
+      grid-row: span 2;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* მეგობრის სახელი */
+    p.activity {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    /* სიმღერა და დრო */
+    .activ-description {
+      margin: 0;
+      font-size: 12px;
+      color: #a7a7a7;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      b {
+        color: #a7a7a7; /* Spotify-ზე სიმღერის სახელიც ნაცრისფერია ხოლმე აქ */
+        font-weight: 400;
+        margin-right: 4px;
+      }
+      
+      img { /* მწვანე აიქონი */
+        width: 12px;
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+
+// Liked Songs
+
+tr:hover{
+  @include green-hover
+}
+
+
+.playlist-table {
+    width: 60%;
+    border-collapse: collapse;
+   
+}
+
+.playlist-table th {
+    
+    padding: 15px;
+    border-bottom: 1px solid $text-primary;
+    font-size: $font-weight-normal;
+    text-align: left;
+}
+
+.playlist-table td {
+    padding: 10px;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.track-info img {
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+
+.track-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    font-size: $font-size-base;
+    font-weight: 600;
+    display: block;
+}
+
+
+
+.heart svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
