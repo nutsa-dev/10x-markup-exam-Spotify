@@ -1,7 +1,5 @@
 @charset "UTF-8";
 /* დასადგენი მაქვს ეს რისი ფერია */
-/* Spacing & Sizing გასაწერი მაქვს */
-/*  Breakpoints გასაწერი მაქვს */
 /* სქროლის ხაზის გასაქრობად */
 * {
   box-sizing: border-box;
@@ -75,7 +73,7 @@ p {
   grid-row: 1;
   left: 0;
   top: 0;
-  margin-bottom: 16px; /* არაფერი არ შეცვალა ((( */
+  margin-bottom: 16px;
 }
 
 .sidebar {
@@ -112,7 +110,7 @@ footer {
   border-radius: 10px;
 }
 
-.section-name {
+.section-name:first-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -125,7 +123,7 @@ footer {
   padding: 37px;
   overflow-y: auto;
   height: 100%;
-  background: radial-gradient(circle at center, #575F70 0%, transparent 70%), linear-gradient(to bottom, #54565F);
+  background: radial-gradient(circle at 65% 50%, #6F7B91, #404652 55%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   scrollbar-width: none;
@@ -141,12 +139,29 @@ footer {
   gap: 20px;
   display: flex;
   flex-direction: column;
+  animation-name: appear;
+  animation-duration: 1.8s;
+  animation-timing-function: ease-in-out;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-75px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .song-content-wrapper {
   display: flex;
-  gap: 62px;
+  gap: 72px;
   align-items: flex-start;
+}
+
+.info-wrapper p {
+  color: #E0E0E0;
 }
 
 .song-content-wrapper img {
@@ -411,8 +426,19 @@ tr:hover {
 .playlist-table {
   width: 60%;
   border-collapse: collapse;
+  animation-name: clarify;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
 }
 
+@keyframes clarify {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .playlist-table th {
   padding: 15px;
   border-bottom: 1px solid #898989;
@@ -441,9 +467,8 @@ tr:hover {
 }
 
 .track-name {
-  font-size: 14px;
-  font-weight: 600;
-  display: block;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .heart svg {
@@ -451,6 +476,61 @@ tr:hover {
   vertical-align: middle;
 }
 
+.heart-outline:hover {
+  color: #13BF51;
+}
+
+.heart-outline:hover svg path {
+  stroke: #13BF51;
+  transition: all 0.3s ease;
+}
+
+.main-content-album-bg {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  border-radius: 8px;
+  padding: 37px;
+  overflow-y: auto;
+  height: 100%;
+  background: linear-gradient(to bottom, #272a32 10%, #0B0C0D 45%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  scrollbar-width: none;
+  display: flex;
+}
+
+.album-options {
+  flex: 1;
+  min-width: 0;
+  padding-left: 50px;
+}
+
+.album-details {
+  flex: 0 0 400px;
+  width: 400px;
+  margin-right: 180px;
+}
+
+.main-cover {
+  width: 400px;
+  object-fit: cover;
+  animation-name: fadeIn;
+  animation-duration: 1.7s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+    filter: brightness(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: brightness(1);
+  }
+}
 .sidebar {
   background-color: #060606;
   color: #898989;
@@ -564,7 +644,6 @@ tr:hover {
   color: #E0E0E0;
   padding: 8px 12px;
   border-radius: 44px;
-  gap: 10px;
 }
 
 .header-navigation {
@@ -593,6 +672,7 @@ tr:hover {
   padding: 0;
 }
 .main-nav-list .nav-link {
+  display: flex;
   align-items: center;
 }
 .main-nav-list .nav-link:nth-child(1) {
@@ -607,6 +687,9 @@ tr:hover {
 .main-nav-list .nav-link:nth-child(4) {
   width: 350px;
 }
+.main-nav-list .nav-link.Me-icon {
+  display: none;
+}
 .main-nav-list .nav-link a {
   display: flex;
   align-items: center;
@@ -617,14 +700,7 @@ tr:hover {
   padding: 8px 12px;
   border-radius: 8px;
   gap: 10px;
-}
-.main-nav-list .nav-link a:hover {
-  color: #E0E0E0;
-  background-color: #202020;
-  border-color: #6E6E6E;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 .main-nav-list .nav-link a .nav-icon path {
   stroke: #898989;
@@ -637,12 +713,12 @@ tr:hover {
   border-radius: 8px;
   cursor: pointer;
   transition: color 0.3s ease;
+  color: #E0E0E0;
 }
 .main-nav-list .nav-link a:hover .nav-icon path {
   stroke: #E0E0E0;
 }
 
-/* ეს აიკონი ჯიუტობს */
 .action-nav-list {
   display: flex;
   gap: 13px;
@@ -669,11 +745,42 @@ tr:hover {
   align-items: center;
 }
 
-.library-content-header {
+.library-filter-buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 21px;
+  gap: 25px;
+}
+
+.library-filter-buttons img:last-child {
+  margin-left: auto;
+}
+
+.liked-songs-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 21px;
+  gap: 25px;
+}
+
+.liked-songs-content-header img:first-child {
+  margin-right: auto;
+}
+
+.filter-buttons {
+  padding: 18px;
+  padding-left: 0px;
+  gap: 10px;
+}
+
+.filter-buttons img:hover {
+  background-color: #DBDBDB;
+}
+
+.filter-buttons span:hover {
+  color: #DBDBDB;
 }
 
 .main-content-header {

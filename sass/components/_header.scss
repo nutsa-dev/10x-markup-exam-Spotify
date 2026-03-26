@@ -30,10 +30,9 @@
   margin-top: 10px;
   margin-left: 10px;
   padding: 0;
-  
 
   .nav-link {
-    
+    display: flex;
     align-items: center;
 
     &:nth-child(1) { width: 250px; }
@@ -41,47 +40,38 @@
     &:nth-child(3) { width: 210px; }
     &:nth-child(4) { width: 350px; }
 
+    &.Me-icon {
+      display: none;
+    }
+
     a {
       display: flex;
       align-items: center;
-      width: 100%;        
-      box-sizing: border-box; 
+      width: 100%;
+      box-sizing: border-box;
       text-decoration: none;
       color: $text-primary;
       padding: 8px 12px;
-      border-radius: 8px; 
+      border-radius: 8px;
       gap: 10px;
+      transition: all 0.3s ease;
+
+      .nav-icon path {
+        stroke: $text-primary;
+        transition: stroke 0.3s ease;
+      }
 
       &:hover {
         @include hover-active;
+        color: $text-active;
+
+        .nav-icon path {
+          stroke: $text-active;
+        }
       }
-
-      .nav-icon path {
-  stroke: $text-primary; // ან შენი სასურველი საწყისი ფერი
-  transition: stroke 0.3s ease;
-}     
-
-&:hover {
-    @include hover-active;
-    
-    // 2. ჰოვერის დროს შეიცვალოს path-ის ფერი
-    .nav-icon path {
-      stroke: $text-active; // აქ მიუთითე ის ფერი, რომელიც გინდა ჰოვერზე
-  
-    }
-
-  }
-
     }
   }
 }
-
-// .nav-icon-double {
-//   padding: 6px;   
-// }
-
-/* ეს აიკონი ჯიუტობს */
-
 
 // Styles for 2nd list / Top left navigation with icons inside
 
@@ -119,16 +109,56 @@
 }
 
 
+// End of mutual header styles 
 
-.library-content-header {
+// My Library Nav
+.library-filter-buttons {
   @include content-header;
   padding-bottom: 21px;
+  gap: 25px;
 }
+
+.library-filter-buttons img:last-child {
+  margin-left: auto;
+}
+
+// Liked Songs Nav
+
+.liked-songs-content-header {
+  @include content-header;
+  padding-bottom: 21px;
+  gap: 25px;
+}
+
+.liked-songs-content-header img:first-child {
+  margin-right: auto;
+}
+
+
+// Album Inner Nav
+
+.filter-buttons {
+  padding: 18px;
+  padding-left: 0px;
+  gap: 10px;
+  
+}
+
+.filter-buttons img:hover {
+  background-color: $text-muted;
+}
+
+.filter-buttons span:hover {
+  color: $text-muted;
+}
+
+
+// Main Inner Nav
 
 .main-content-header {
   display: flex;
-    justify-content: space-between;
-    align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .top-nav-link {
@@ -147,3 +177,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
+
+
+
+
+
+

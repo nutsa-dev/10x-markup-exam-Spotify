@@ -43,16 +43,16 @@ padding-left: 20px;
 
 
 .nav-icon path {
-  stroke: $text-primary; // ან შენი სასურველი საწყისი ფერი
+  stroke: $text-primary; 
   transition: stroke 0.3s ease;
 }     
 
+
 &:hover {
     @include hover-active;
-    
-    // 2. ჰოვერის დროს შეიცვალოს path-ის ფერი
+   
     .nav-icon path {
-      stroke: $text-active; // აქ მიუთითე ის ფერი, რომელიც გინდა ჰოვერზე
+      stroke: $text-active; 
   
     }
 

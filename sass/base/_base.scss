@@ -61,7 +61,7 @@ p {
   // position: fixed;
   left: 0;
   top: 0;
-  margin-bottom: 16px; /* არაფერი არ შეცვალა ((( */
+  margin-bottom: 16px; 
 }
 
 .sidebar {
@@ -100,7 +100,7 @@ footer {
 }
 
 
-.section-name {
+.section-name:first-child {
 
   display: flex;
   align-items: center;
@@ -117,14 +117,7 @@ footer {
   padding: 37px;
   overflow-y: auto;
   height: 100%;
-  // background: linear-gradient(to bottom, #121212, #000000),
-  // radial-gradient(circle at 70% 30%, rgba(50, 50, 50, 0.4), transparent 50%);
-  
-  // // იმისთვის რომ გრადიენტი არ განმეორდეს
-  // // background-repeat: no-repeat;
-  // // background-attachment: fixed;
- background: radial-gradient(circle at center, #575F70 0%, transparent 70%),
-    linear-gradient(to bottom, #54565F);
+  background: radial-gradient(circle at 65% 50%, #6F7B91, #404652 55%);
 
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -138,20 +131,54 @@ footer {
   gap: 20px;
   display: flex;
   flex-direction: column;
+  
+  animation-name: appear;     
+  animation-duration: 1.8s;   
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;        
+        transform: translateX(-75px); 
+    }
+    to {
+        opacity: 1;        
+        transform: translateY(0);  
+    }
 }
 
 
 .song-content-wrapper {
     display: flex;
-    gap: 62px; 
+    gap: 72px; 
     align-items: flex-start;
+
+}
+
+.info-wrapper p {
+  color: $text-active;
 }
 
 .song-content-wrapper img {
     width: 500px; 
     height: 500px;
+
+    
     
 }
+
+// .info-wrapper {
+
+//     animation-name: appear;     
+//     animation-duration: 1.5s;   
+//     animation-timing-function: ease-out;
+
+
+// }
+
+
+
 
 .icons-and-details {
     display: flex;
@@ -443,15 +470,29 @@ footer {
 // Liked Songs
 
 tr:hover{
-  @include green-hover
+  @include green-hover;
 }
 
 
 .playlist-table {
     width: 60%;
     border-collapse: collapse;
+
+    animation-name: clarify;
+    animation-duration: 1.6s;
+    animation-timing-function: ease-in-out;
    
 }
+
+@keyframes clarify {
+    from {
+        opacity: 0;                   
+    }
+    to {
+        opacity: 1;                   
+    }
+}
+
 
 .playlist-table th {
     
@@ -483,9 +524,9 @@ tr:hover{
 }
 
 .track-name {
-    font-size: $font-size-base;
-    font-weight: 600;
-    display: block;
+    font-size: $font-size-basic; 
+    font-weight: 700;
+    // display: block;
 }
 
 
@@ -493,5 +534,74 @@ tr:hover{
 .heart svg {
     display: inline-block;
     vertical-align: middle;
+}
+
+
+.heart-outline:hover {
+  @include green-hover;
+}
+
+.heart-outline:hover svg path {
+    stroke: $brand-color; 
+    transition: all 0.3s ease; 
+}
+
+
+
+
+.main-content-album-bg {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    border-radius: 8px;
+    padding: 37px;
+    overflow-y: auto;
+    height: 100%;
+     background: linear-gradient(to bottom, #272a32 10%, #0B0C0D 45%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scrollbar-width: none;
+
+   display: flex;
+}
+
+.album-options {
+    flex: 1;      
+    min-width: 0; 
+    padding-left: 50px;
+}
+
+
+
+
+.album-details {
+    flex: 0 0 400px; 
+    width: 400px;
+    margin-right: 180px;
+
+    
+     
+}
+
+.main-cover {
+    width: 400px;     
+    object-fit: cover;
+    
+    animation-name: fadeIn;     
+    animation-duration: 1.7s;   
+    animation-timing-function: ease-out;
+    
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;        
+        transform: translateY(-50px); 
+        filter: brightness(0);
+    }
+    to {
+        opacity: 1;        
+        transform: translateY(0);  
+        filter: brightness(1);
+    }
 }
 
