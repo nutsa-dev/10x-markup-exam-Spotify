@@ -117,7 +117,7 @@ footer {
   padding: 37px;
   overflow-y: auto;
   height: 100%;
-  background: radial-gradient(circle at 65% 50%, #6F7B91, #404652 55%);
+  background: radial-gradient(circle at 65% 60%, #6F7B91 10%, #30343c 55%);
 
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -235,29 +235,29 @@ footer {
 
   .lyrics-nav li.active {
   color: #fff;
-  position: relative; // აუცილებელია ფსევდო-ელემენტის პოზიციონირებისთვის
-  margin-bottom: 0; // border-bottom აღარ გვაქვს, ამიტომ ეს უბრალო padding-ია
+  position: relative; 
+  margin-bottom: 0; 
 
   &::after {
-    content: ''; // ცარიელი შინაარსი, რომ ფსევდო-ელემენტი შეიქმნას
+    content: ''; 
     position: absolute;
-    bottom: -1.5px; // ძირითად ხაცრისფერ ხაზს რომ დააჯდეს
-    left: 50%; // ჯერ ცენტრში ვსვამთ
-    transform: translateX(-50%); // შემდეგ ვაბალანსებთ ცენტრს
+    bottom: -1.5px; 
+    left: 50%; 
+    transform: translateX(-50%); 
 
-    /* ხაზის ზომა (დაარეგულირე შენით) */
-    width: calc(100% + 20px); // ტექსტის სიგანეს პლუს 20px (10px თითო მხარეს)
-    height: 3px; // ხაზის სისქე
+   
+    width: calc(100% + 20px); 
+    height: 3px; 
 
-    /* ხაზის ფერი და მომრგვალება */
-    background-color: $brand-color; // მწვანე ფერი background-ად
-    border-radius: 4px; // ბოლოების მომრგვალება
+  
+    background-color: $brand-color; 
+    border-radius: 4px; 
   }
 }
 
   .lyrics-container {
     display: flex;
-    gap: 60px; // დაშორება ხატულებსა და ტექსტს შორის
+    gap: 60px; 
 
     .lyrics-sidebar {
       display: flex;
@@ -287,20 +287,18 @@ footer {
 }
 
 .lyrics-content {
-  /* ეს თვისება აიძულებს ბრაუზერს აღიქვას Enter-ები */
+
   white-space: pre-line; 
   
   font-size: 28px;
   font-weight: 700;
   color: #fff;
-  line-height: 1.8; /* ხაზებს შორის დაშორება */
+  line-height: 1.8; 
   letter-spacing: -0.04em;
   padding-left: 10px;
-  
-  /* თუ გინდა, რომ ტექსტი ძალიან თეთრი არ იყოს და თვალს არ ჭრიდეს */
+
   opacity: 0.9;
   
-  /* პატარა ეფექტი: ტექსტის შერჩევისას (Selection) ფერი */
   &::selection {
     background: #1ed760;
     color: #000;
@@ -386,16 +384,16 @@ footer {
 }
 
 .main-content-left {
-  flex: 1; /* იკავებს მაქსიმალურ სივრცეს */
+  flex: 1; 
   min-width: 0;
 }
 
 .main-content-right {
-  flex: 0 0 358px; /* ფიქსირებული სიგანე, არ იკუმშება */
-  padding: 10px 20px; /* ზედმეტი 60px padding მოვაკელით, რომ ფოტოს დაემსგავსოს */
-  border-left: 1px solid rgba(255, 255, 255, 0.1); /* სურვილისამებრ, გამყოფი ხაზი */
+  flex: 0 0 358px; 
+  padding: 10px 20px; 
+  border-left: 1px solid $text-muted; 
 
-  /* შიდა ელემენტების სტილი */
+ 
   .section-name {
     display: flex;
     justify-content: space-between;
@@ -404,16 +402,11 @@ footer {
 
     h2 {
       font-size: $font-size-base;
-      font-weight: 700;
       margin: 0;
-      color: #b3b3b3;
+     
     }
     
-    .navigation-arrows img {
-      cursor: pointer;
-      opacity: 0.7;
-      &:hover { opacity: 1; }
-    }
+   
   }
 
   .activity > div {
@@ -424,54 +417,58 @@ footer {
     margin-bottom: 20px;
     align-items: center;
 
-    /* ავატარი */
-    & > img:first-child {
-      grid-row: span 2;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    /* მეგობრის სახელი */
-    p.activity {
-      margin: 0;
-      font-size: 14px;
-      font-weight: 500;
-      color: #ffffff;
-    }
-
-    /* სიმღერა და დრო */
-    .activ-description {
-      margin: 0;
-      font-size: 12px;
-      color: #a7a7a7;
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      b {
-        color: #a7a7a7; /* Spotify-ზე სიმღერის სახელიც ნაცრისფერია ხოლმე აქ */
-        font-weight: 400;
-        margin-right: 4px;
-      }
-      
-      img { /* მწვანე აიქონი */
-        width: 12px;
-        margin-right: 6px;
-      }
-    }
+   
+    
   }
 }
 
+
+/* კონტეინერი, სადაც ყველა მეგობარია */
+.activity {
+    display: flex;
+    flex-direction: column;
+}
+
+/* თითოეული მეგობრის ბლოკი */
+.activity > div {
+    display: grid;
+    /* პირველი სვეტი ფოტოსთვის (ზომას შიგთავსი განსაზღვრავს), მეორე - ტექსტისთვის */
+    grid-template-columns: auto 1fr; 
+    /* ორი რიგი: ერთი სახელისთვის, მეორე სიმღერისთვის */
+    grid-template-rows: auto auto;
+    align-items: center; /* ვერტიკალური ცენტრირება */
+}
+
+/* მეგობრის ფოტო - უნდა დაიკავოს ორივე რიგი */
+.activity div img:first-of-type {
+    grid-row: span 2;
+}
+
+/* სახელის პარაგრაფი */
+.activity p.activity {
+    margin: 0;
+    align-self: end; /* ქვედა ხაზისკენ სწორება */
+}
+
+/* სიმღერის აღწერის პარაგრაფი */
+.activ-description {
+    margin: 0;
+    display: flex; /* სიმღერა და არტისტი რომ გვერდიგვერდ იყოს */
+    align-items: center;
+    align-self: start; /* ზედა ხაზისკენ სწორება */
+}
+
+/* თუ მწვანე აიქონს იყენებ ტექსტთან */
+.activ-description img {
+    display: inline-block;
+}
 
 // Liked Songs
 
 tr:hover{
   @include green-hover;
 }
+
 
 
 .playlist-table {
@@ -537,9 +534,7 @@ tr:hover{
 }
 
 
-.heart-outline:hover {
-  @include green-hover;
-}
+
 
 .heart-outline:hover svg path {
     stroke: $brand-color; 
@@ -556,7 +551,7 @@ tr:hover{
     padding: 37px;
     overflow-y: auto;
     height: 100%;
-     background: linear-gradient(to bottom, #272a32 10%, #0B0C0D 45%);
+    background: linear-gradient(to bottom, #272a32 10%, #0B0C0D 45%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     scrollbar-width: none;
@@ -605,3 +600,314 @@ tr:hover{
     }
 }
 
+// Playlist
+
+.main-content-album-bg-blue {
+
+    grid-column-start: 2;
+    grid-row-start: 2;
+    border-radius: 8px;
+    padding: 37px;
+    overflow-y: auto;
+    height: 100%;
+    background: linear-gradient(to bottom, #2C3B86, #060606 50%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scrollbar-width: none;
+    display: flex;
+
+}
+
+.main-cover-pic {
+ width: 400px;     
+ object-fit: cover; 
+
+ animation-name: blink;
+ animation-duration: 1.5s;
+ animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1; 
+  }
+  50% {
+    opacity: 0.3; 
+  }
+  100% {
+    opacity: 1; 
+  }
+}
+
+.button-options {
+  margin: 20px 0 15px 0;
+}
+
+
+
+
+
+// Responsive
+
+// Desktop
+
+@media (max-width: 1440px) {
+
+}
+
+
+// Mobile
+
+
+@media (max-width: 600px) {
+
+    
+    .main-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+
+    // Hide Sidebar and 1st section
+    aside.sidebar, 
+    .sidebar, 
+    .icon-nav, 
+    .cards-section {
+        display: none !important;
+    }
+
+    // Main Content
+    .main-content {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        border: none !important;
+        flex: 1; 
+        overflow-y: auto !important; 
+        box-sizing: border-box !important;
+        display: block !important;
+       
+    }
+
+    // Player
+   footer.player {
+        
+        position: fixed !important;
+        bottom: 95px !important; 
+        left: 8px !important;
+        right: 8px !important;
+        width: calc(100% - 20px) !important; 
+        
+        height: 61px !important;
+        box-sizing: border-box !important;
+        z-index: 2000 !important;
+        display: flex !important;
+        align-items: center !important;
+    
+    }
+
+    .space-for-icons {
+        justify-content: space-between !important; 
+    }
+
+    /* მობილურზე ვმალავთ ყველა ზედმეტ კონტროლს (Shuffle, Loop, Time და ა.შ.) */
+    .player-left > img, 
+    .player-right img:not([alt="Pause"]):not([alt="Add to Playlist"]) {
+        display: none !important;
+    }
+
+    /* ვტოვებთ მხოლოდ სიმღერის ბლოკს და 2 მთავარ ღილაკს */
+    .player-left {
+        width: 70% !important;
+        gap: 10px !important;
+    }
+
+    .song-info {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .current-song {
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        border-radius: 6px !important;
+    }
+
+    .song-text {
+        padding-left: 10px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* თუ სახელი გრძელია, დააწერტილებს */
+    }
+
+    .song-name {
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        color: #fff !important;
+    }
+
+    .artist-name {
+        font-size: 11px !important;
+        color: #b3b3b3 !important;
+    }
+
+    // .album-name {
+    //     display: none !important; 
+    // }
+
+    /* მარჯვენა მხარე: Play და Add ღილაკები */
+    .player-right {
+        display: flex !important;
+        width: auto !important;
+        gap: 15px !important;
+    }
+
+    .player-right img {
+        width: 24px !important;
+        height: 24px !important;
+        display: block !important;
+        filter: brightness(0) invert(1); /* თეთრი ფერი აიკონებს */
+    }
+
+    /* 5. ქვედა ნავიგაცია (Mobile Nav) - სულ ბოლოში */
+    .top-sidebar {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 95px !important;
+        background-color: $bg-black !important;
+        display: flex !important;
+        z-index: 2001 !important;
+        align-items: center !important;
+        border-top: 1px solid #282828 !important;
+    }
+
+    /* ნავიგაციის შიდა სტრუქტურა */
+    .header-navigation {
+        width: 100% !important;
+    }
+
+    .main-nav-list {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: space-around !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    .nav-link {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        flex: 1 !important;
+    }
+
+    .nav-link a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+
+    .nav-icon {
+        width: 24px !important;
+        height: 24px !important;
+        display: block !important;
+        margin-bottom: 4px !important;
+    }
+
+    .nav-text {
+        display: block !important;
+        font-size: 10px !important;
+        font-weight: 600 !important;
+    }
+
+    /* Me აიკონის გამოჩენა */
+    .Me-icon {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 600px) {
+    /* 1. გრიდის გასწორება: 2 ქარდი გვერდიგვერდ */
+    .search-section {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* 2 თანაბარი სვეტი */
+        gap: 12px !important;
+        padding: 5px 0 !important;
+    }
+
+    /* 2. ქარდის ზომა და ფორმა */
+    .search-item {
+        position: relative !important;
+        /* თუ ფიქსირებულმა 100px-მა არ იმუშავა, გამოვიყენოთ aspect-ratio */
+        aspect-ratio: 16 / 9 !important; 
+        height: auto !important; /* ვაუქმებთ დესკტოპის სიმაღლეს */
+        min-height: 90px !important; /* მინიმალური ზღვარი */
+        max-height: 110px !important; /* მაქსიმალური ზღვარი */
+        
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        display: block !important; /* ვრწმუნდებით, რომ flex-მა არ გაწელოს */
+    }
+
+    /* ძალიან მნიშვნელოვანია: თუ მშობელ კონტეინერს (search-section) 
+       აქვს grid-auto-rows ან align-items: stretch, ის ძალით გაწელავს ქარდს */
+    .search-section {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-auto-rows: min-content !important; /* ეს არ მისცემს საშუალებას სიმაღლეში გაიზარდოს */
+        align-items: start !important;
+        gap: 12px !important;
+    }
+
+    /* 3. ტექსტი ქარდის შიგნით */
+    .search-item h3 {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        margin: 0 !important;
+        color: white !important;
+        max-width: 80px; /* რომ ტექსტი არ გადაეფაროს სურათს */
+        line-height: 1.2;
+    }
+
+    /* 4. სურათის განლაგება (Spotify-ს ეფექტი) */
+    .search-item img {
+        position: absolute !important;
+        right: -12px !important; /* კუთხეში გასვლა */
+        bottom: -5px !important; /* ქვემოთ ჩასვლა */
+        width: 65px !important;
+        height: 65px !important;
+        transform: rotate(25deg) !important; /* დახრილობა */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        display: block !important;
+    }
+
+    /* 5. კონტეინერის დაშორებები */
+    .search-main-container {
+        padding: 10px 15px !important;
+    }
+
+    .search-main-container h2 {
+        font-size: 22px !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* 6. Recent searches-ის დამალვა ან გასწორება */
+    /* თუ გინდა რომ მხოლოდ Browse All გამოჩნდეს როგორც ფოტოზეა: */
+    .cards-section {
+        display: none !important; 
+    }
+}

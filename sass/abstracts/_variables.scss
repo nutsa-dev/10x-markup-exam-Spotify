@@ -18,7 +18,7 @@ $brand-color: #13BF51; //brand's iconic accent green
 
 $footer-col: #333842;
 $border-col: #6E6E6E;
-$color: #1A1A1A;         /* დასადგენი მაქვს ეს რისი ფერია */
+$color: #1A1A1A;         
 
 
 
@@ -52,3 +52,25 @@ $font-weight-medium: 500;
 $font-weight-bold:   700;
 
 $padding-base: 5.5px;
+
+
+
+// Breackpoints
+
+// Desktop
+
+@media (max-width: 1440px) {
+
+}
+
+// Tablet
+
+@media (max-width: 1024px) {
+    
+}
+
+// Mobile
+
+@media (max-width: 600px) {
+    
+}
