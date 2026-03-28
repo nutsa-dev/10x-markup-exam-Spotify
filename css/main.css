@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* დასადგენი მაქვს ეს რისი ფერია */
 /* სქროლის ხაზის გასაქრობად */
 * {
   box-sizing: border-box;
@@ -123,7 +122,7 @@ footer {
   padding: 37px;
   overflow-y: auto;
   height: 100%;
-  background: radial-gradient(circle at 65% 50%, #6F7B91, #404652 55%);
+  background: radial-gradient(circle at 65% 60%, #6F7B91 10%, #30343c 55%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   scrollbar-width: none;
@@ -222,10 +221,8 @@ footer {
   bottom: -1.5px;
   left: 50%;
   transform: translateX(-50%);
-  /* ხაზის ზომა (დაარეგულირე შენით) */
   width: calc(100% + 20px);
   height: 3px;
-  /* ხაზის ფერი და მომრგვალება */
   background-color: #13BF51;
   border-radius: 4px;
 }
@@ -254,17 +251,14 @@ footer {
 }
 
 .lyrics-content {
-  /* ეს თვისება აიძულებს ბრაუზერს აღიქვას Enter-ები */
   white-space: pre-line;
   font-size: 28px;
   font-weight: 700;
   color: #fff;
-  line-height: 1.8; /* ხაზებს შორის დაშორება */
+  line-height: 1.8;
   letter-spacing: -0.04em;
   padding-left: 10px;
-  /* თუ გინდა, რომ ტექსტი ძალიან თეთრი არ იყოს და თვალს არ ჭრიდეს */
   opacity: 0.9;
-  /* პატარა ეფექტი: ტექსტის შერჩევისას (Selection) ფერი */
 }
 .lyrics-content::selection {
   background: #1ed760;
@@ -342,15 +336,14 @@ footer {
 }
 
 .main-content-left {
-  flex: 1; /* იკავებს მაქსიმალურ სივრცეს */
+  flex: 1;
   min-width: 0;
 }
 
 .main-content-right {
-  flex: 0 0 358px; /* ფიქსირებული სიგანე, არ იკუმშება */
-  padding: 10px 20px; /* ზედმეტი 60px padding მოვაკელით, რომ ფოტოს დაემსგავსოს */
-  border-left: 1px solid rgba(255, 255, 255, 0.1); /* სურვილისამებრ, გამყოფი ხაზი */
-  /* შიდა ელემენტების სტილი */
+  flex: 0 0 358px;
+  padding: 10px 20px;
+  border-left: 1px solid #DBDBDB;
 }
 .main-content-right .section-name {
   display: flex;
@@ -360,16 +353,7 @@ footer {
 }
 .main-content-right .section-name h2 {
   font-size: 14px;
-  font-weight: 700;
   margin: 0;
-  color: #b3b3b3;
-}
-.main-content-right .section-name .navigation-arrows img {
-  cursor: pointer;
-  opacity: 0.7;
-}
-.main-content-right .section-name .navigation-arrows img:hover {
-  opacity: 1;
 }
 .main-content-right .activity > div {
   display: grid;
@@ -378,45 +362,38 @@ footer {
   gap: 2px 12px;
   margin-bottom: 20px;
   align-items: center;
-  /* ავატარი */
 }
-.main-content-right .activity > div > img:first-child {
+
+.activity {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+}
+
+.activity div img:first-of-type {
   grid-row: span 2;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
 }
-.main-content-right .activity > div {
-  /* მეგობრის სახელი */
-}
-.main-content-right .activity > div p.activity {
+
+.activity p.activity {
   margin: 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: #ffffff;
+  align-self: end;
 }
-.main-content-right .activity > div {
-  /* სიმღერა და დრო */
-}
-.main-content-right .activity > div .activ-description {
+
+.activ-description {
   margin: 0;
-  font-size: 12px;
-  color: #a7a7a7;
   display: flex;
   align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  align-self: start;
 }
-.main-content-right .activity > div .activ-description b {
-  color: #a7a7a7; /* Spotify-ზე სიმღერის სახელიც ნაცრისფერია ხოლმე აქ */
-  font-weight: 400;
-  margin-right: 4px;
-}
-.main-content-right .activity > div .activ-description img { /* მწვანე აიქონი */
-  width: 12px;
-  margin-right: 6px;
+
+.activ-description img {
+  display: inline-block;
 }
 
 tr:hover {
@@ -476,10 +453,6 @@ tr:hover {
   vertical-align: middle;
 }
 
-.heart-outline:hover {
-  color: #13BF51;
-}
-
 .heart-outline:hover svg path {
   stroke: #13BF51;
   transition: all 0.3s ease;
@@ -529,6 +502,223 @@ tr:hover {
     opacity: 1;
     transform: translateY(0);
     filter: brightness(1);
+  }
+}
+.main-content-album-bg-blue {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  border-radius: 8px;
+  padding: 37px;
+  overflow-y: auto;
+  height: 100%;
+  background: linear-gradient(to bottom, #2C3B86, #060606 50%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  scrollbar-width: none;
+  display: flex;
+}
+
+.main-cover-pic {
+  width: 400px;
+  object-fit: cover;
+  animation-name: blink;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.button-options {
+  margin: 20px 0 15px 0;
+}
+
+@media (max-width: 600px) {
+  .main-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  aside.sidebar,
+  .sidebar,
+  .icon-nav,
+  .cards-section {
+    display: none !important;
+  }
+  .main-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    border: none !important;
+    flex: 1;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+  footer.player {
+    position: fixed !important;
+    bottom: 104px !important;
+    left: 8px !important;
+    right: 8px !important;
+    width: calc(100% - 20px) !important;
+    height: 61px !important;
+    box-sizing: border-box !important;
+    z-index: 2000 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .space-for-icons {
+    justify-content: space-between !important;
+  }
+  .player-left > img,
+  .player-right img:not([alt=Pause]):not([alt="Add to Playlist"]) {
+    display: none !important;
+  }
+  .player-left {
+    width: 70% !important;
+    gap: 10px !important;
+  }
+  .song-info {
+    width: 100%;
+    overflow: hidden;
+  }
+  .current-song {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 6px !important;
+  }
+  .song-text {
+    padding-left: 10px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .song-name {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+  }
+  .artist-name {
+    font-size: 11px !important;
+  }
+  .player-right {
+    display: flex !important;
+    width: auto !important;
+    gap: 15px !important;
+  }
+  .player-right img {
+    width: 24px !important;
+    height: 24px !important;
+    display: block !important;
+  }
+  .top-sidebar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 105px !important;
+    padding-bottom: 35px !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 2001 !important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.9) 40%, rgb(0, 0, 0) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .main-nav-list {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-around !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  .nav-link a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    height: 100% !important;
+  }
+  .nav-icon {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+  .nav-text {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+  .Me-icon {
+    display: flex !important;
+  }
+}
+@media (max-width: 600px) and (max-width: 600px) {
+  .search-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: min-content !important;
+    align-items: start !important;
+    gap: 12px !important;
+    padding: 5px 0 !important;
+  }
+  .search-item {
+    position: relative !important;
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+    min-height: 90px !important;
+    max-height: 110px !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  .search-item h3 {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    color: white !important;
+    max-width: 80px !important;
+    line-height: 1.2 !important;
+  }
+  .search-item img {
+    position: absolute !important;
+    right: -10px !important;
+    bottom: -5px !important;
+    width: 85px !important;
+    height: 85px !important;
+    transform: rotate(25deg) !important;
+    display: block !important;
+  }
+  .search-main-container {
+    padding: 10px 15px !important;
+  }
+  .search-main-container h2 {
+    font-size: 28px !important;
+    margin-bottom: 15px !important;
+  }
+  .search-nav h3 {
+    font-size: 24px !important;
+  }
+  .navigation-arrows {
+    display: none !important;
   }
 }
 .sidebar {
