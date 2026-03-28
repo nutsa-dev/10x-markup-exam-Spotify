@@ -364,42 +364,34 @@ footer {
   align-items: center;
 }
 
-/* კონტეინერი, სადაც ყველა მეგობარია */
 .activity {
   display: flex;
   flex-direction: column;
 }
 
-/* თითოეული მეგობრის ბლოკი */
 .activity > div {
   display: grid;
-  /* პირველი სვეტი ფოტოსთვის (ზომას შიგთავსი განსაზღვრავს), მეორე - ტექსტისთვის */
   grid-template-columns: auto 1fr;
-  /* ორი რიგი: ერთი სახელისთვის, მეორე სიმღერისთვის */
   grid-template-rows: auto auto;
-  align-items: center; /* ვერტიკალური ცენტრირება */
+  align-items: center;
 }
 
-/* მეგობრის ფოტო - უნდა დაიკავოს ორივე რიგი */
 .activity div img:first-of-type {
   grid-row: span 2;
 }
 
-/* სახელის პარაგრაფი */
 .activity p.activity {
   margin: 0;
-  align-self: end; /* ქვედა ხაზისკენ სწორება */
+  align-self: end;
 }
 
-/* სიმღერის აღწერის პარაგრაფი */
 .activ-description {
   margin: 0;
-  display: flex; /* სიმღერა და არტისტი რომ გვერდიგვერდ იყოს */
+  display: flex;
   align-items: center;
-  align-self: start; /* ზედა ხაზისკენ სწორება */
+  align-self: start;
 }
 
-/* თუ მწვანე აიქონს იყენებ ტექსტთან */
 .activ-description img {
   display: inline-block;
 }
@@ -576,7 +568,7 @@ tr:hover {
   }
   footer.player {
     position: fixed !important;
-    bottom: 95px !important;
+    bottom: 104px !important;
     left: 8px !important;
     right: 8px !important;
     width: calc(100% - 20px) !important;
@@ -589,12 +581,10 @@ tr:hover {
   .space-for-icons {
     justify-content: space-between !important;
   }
-  /* მობილურზე ვმალავთ ყველა ზედმეტ კონტროლს (Shuffle, Loop, Time და ა.შ.) */
   .player-left > img,
   .player-right img:not([alt=Pause]):not([alt="Add to Playlist"]) {
     display: none !important;
   }
-  /* ვტოვებთ მხოლოდ სიმღერის ბლოკს და 2 მთავარ ღილაკს */
   .player-left {
     width: 70% !important;
     gap: 10px !important;
@@ -613,18 +603,15 @@ tr:hover {
     padding-left: 10px !important;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* თუ სახელი გრძელია, დააწერტილებს */
+    text-overflow: ellipsis;
   }
   .song-name {
     font-size: 13px !important;
     font-weight: 500 !important;
-    color: #fff !important;
   }
   .artist-name {
     font-size: 11px !important;
-    color: #b3b3b3 !important;
   }
-  /* მარჯვენა მხარე: Play და Add ღილაკები */
   .player-right {
     display: flex !important;
     width: auto !important;
@@ -634,24 +621,21 @@ tr:hover {
     width: 24px !important;
     height: 24px !important;
     display: block !important;
-    filter: brightness(0) invert(1); /* თეთრი ფერი აიკონებს */
   }
-  /* 5. ქვედა ნავიგაცია (Mobile Nav) - სულ ბოლოში */
   .top-sidebar {
     position: fixed !important;
     bottom: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    height: 95px !important;
-    background-color: #060606 !important;
+    height: 105px !important;
+    padding-bottom: 35px !important;
     display: flex !important;
-    z-index: 2001 !important;
     align-items: center !important;
-    border-top: 1px solid #282828 !important;
-  }
-  /* ნავიგაციის შიდა სტრუქტურა */
-  .header-navigation {
-    width: 100% !important;
+    z-index: 2001 !important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.9) 40%, rgb(0, 0, 0) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
   .main-nav-list {
     display: flex !important;
@@ -661,100 +645,79 @@ tr:hover {
     padding: 0 !important;
     list-style: none !important;
   }
-  .nav-link {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    flex: 1 !important;
-  }
   .nav-link a {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-decoration: none !important;
-    color: inherit !important;
+    height: 100% !important;
   }
   .nav-icon {
-    width: 24px !important;
-    height: 24px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
     display: block !important;
-    margin-bottom: 4px !important;
+    object-fit: contain !important;
   }
   .nav-text {
-    display: block !important;
-    font-size: 10px !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
   }
-  /* Me აიკონის გამოჩენა */
   .Me-icon {
     display: flex !important;
   }
 }
-@media (max-width: 600px) {
-  /* 1. გრიდის გასწორება: 2 ქარდი გვერდიგვერდ */
+@media (max-width: 600px) and (max-width: 600px) {
   .search-section {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* 2 თანაბარი სვეტი */
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: min-content !important;
+    align-items: start !important;
     gap: 12px !important;
     padding: 5px 0 !important;
   }
-  /* 2. ქარდის ზომა და ფორმა */
   .search-item {
     position: relative !important;
-    /* თუ ფიქსირებულმა 100px-მა არ იმუშავა, გამოვიყენოთ aspect-ratio */
     aspect-ratio: 16/9 !important;
-    height: auto !important; /* ვაუქმებთ დესკტოპის სიმაღლეს */
-    min-height: 90px !important; /* მინიმალური ზღვარი */
-    max-height: 110px !important; /* მაქსიმალური ზღვარი */
+    height: auto !important;
+    min-height: 90px !important;
+    max-height: 110px !important;
     border-radius: 8px !important;
     overflow: hidden !important;
     width: 100% !important;
     margin: 0 !important;
-    display: block !important; /* ვრწმუნდებით, რომ flex-მა არ გაწელოს */
+    display: block !important;
   }
-  /* ძალიან მნიშვნელოვანია: თუ მშობელ კონტეინერს (search-section) 
-     აქვს grid-auto-rows ან align-items: stretch, ის ძალით გაწელავს ქარდს */
-  .search-section {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-auto-rows: min-content !important; /* ეს არ მისცემს საშუალებას სიმაღლეში გაიზარდოს */
-    align-items: start !important;
-    gap: 12px !important;
-  }
-  /* 3. ტექსტი ქარდის შიგნით */
   .search-item h3 {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    font-size: 14px !important;
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    font-size: 22px !important;
     font-weight: 700 !important;
     margin: 0 !important;
     color: white !important;
-    max-width: 80px; /* რომ ტექსტი არ გადაეფაროს სურათს */
-    line-height: 1.2;
+    max-width: 80px !important;
+    line-height: 1.2 !important;
   }
-  /* 4. სურათის განლაგება (Spotify-ს ეფექტი) */
   .search-item img {
     position: absolute !important;
-    right: -12px !important; /* კუთხეში გასვლა */
-    bottom: -5px !important; /* ქვემოთ ჩასვლა */
-    width: 65px !important;
-    height: 65px !important;
-    transform: rotate(25deg) !important; /* დახრილობა */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    right: -10px !important;
+    bottom: -5px !important;
+    width: 85px !important;
+    height: 85px !important;
+    transform: rotate(25deg) !important;
     display: block !important;
   }
-  /* 5. კონტეინერის დაშორებები */
   .search-main-container {
     padding: 10px 15px !important;
   }
   .search-main-container h2 {
-    font-size: 22px !important;
+    font-size: 28px !important;
     margin-bottom: 15px !important;
   }
-  /* 6. Recent searches-ის დამალვა ან გასწორება */
-  /* თუ გინდა რომ მხოლოდ Browse All გამოჩნდეს როგორც ფოტოზეა: */
-  .cards-section {
+  .search-nav h3 {
+    font-size: 24px !important;
+  }
+  .navigation-arrows {
     display: none !important;
   }
 }
